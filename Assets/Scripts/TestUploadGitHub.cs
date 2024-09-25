@@ -7,7 +7,7 @@ public class TestUploadGitHub : MonoBehaviour
     // Start is called before the first frame update
 
     public Vector3 testVector;
-
+    public Transform test;
     void Start()
     {
         
