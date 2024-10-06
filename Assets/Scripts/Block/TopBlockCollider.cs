@@ -19,6 +19,7 @@ public class TopBlockCollider : BlockCollider
                 otherMovement.StopBlock();
                 BlockManager.PushBlock(otherBlock.MainBlock);
 
+                SoundManager.Instance.PlayEffectAudio("Success");
                 //TODO:: AddScore
                 Camera.main.GetComponent<CameraController>()?.SetCameraPosition();
             }
@@ -27,8 +28,8 @@ public class TopBlockCollider : BlockCollider
         {
             //Debug.Log($"{otherBlock.MainBlock.name}昏力 Top -> Bottom 面倒");
             otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
-            //TODO: 格见 -1 && 葛电 喉钒 昏力
-
+            //TODO: 格见 -1
+            SoundManager.Instance.PlayEffectAudio("Fail");
             BlockManager.DestroyAllBlocks();
         }
     }
@@ -36,6 +37,7 @@ public class TopBlockCollider : BlockCollider
     {
         Debug.Log($"{otherBlock.MainBlock.name}昏力 Top -> Side 面倒");
         //TODO: 格见-1
+        SoundManager.Instance.PlayEffectAudio("Fail");
         otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
     }
 

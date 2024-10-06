@@ -17,12 +17,14 @@ public class SideBlockCollider : BlockCollider
     {
         Debug.Log($"{otherBlock.MainBlock.name}昏力 Side -> Bottom 面倒");
         //TODO: 格见-1
+        SoundManager.Instance.PlayEffectAudio("Fail");
         otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
     }
     protected override void SideCollidedLogic(BlockCollider otherBlock, PlayableMove otherMovement)
     {
         //Debug.Log($"{otherBlock.MainBlock.name}昏力 Side -> Side 面倒");
         //TODO: 格见-1
+        SoundManager.Instance.PlayEffectAudio("Fail");
         otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
     }
 
