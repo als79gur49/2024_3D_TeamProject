@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    //카메라 컨트롤: 블럭이 쌓인 위치로 이동
     [SerializeField]
     private int blockLimit;
     private int blockCount;
@@ -27,9 +28,6 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        blockCount = BlockManager.Blocks.Count;
-        //나중에 블럭들이 Push, Pop될 경우에만 Count변경시키기 
-
         MoveCameraPosition();
     }
 
@@ -43,6 +41,8 @@ public class CameraController : MonoBehaviour
     {
         time = 0f;
         currentHeight = transform.position.y;
+
+        blockCount = BlockManager.Blocks.Count;
 
         if (blockLimit > blockCount)
         {

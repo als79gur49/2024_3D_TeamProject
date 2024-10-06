@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayableMove : MonoBehaviour
 {
+    //블럭의 이동을 담당
     [SerializeField][Range(0, 10)]
     private float horizontalSpeed;
     [SerializeField][Range(0, 10)]
@@ -40,7 +41,7 @@ public class PlayableMove : MonoBehaviour
 
         if( !IsMoving)
         {
-           // rigid.velocity = Vector2.zero;
+           rigid.velocity = Vector2.zero;
         }
     }
     public void HorizontalReflect()
@@ -56,6 +57,8 @@ public class PlayableMove : MonoBehaviour
         if (IsMoving && !IsFalling)
         {
             rigid.velocity = Vector2.right * HorizontalSpeed;
+
+            transform.parent = Camera.main.transform;
         }
     }
     public void MovingVertical()
@@ -70,6 +73,8 @@ public class PlayableMove : MonoBehaviour
             {
                 rigid.velocity = Vector2.down * VerticalSpeed;
             }
+
+            transform.parent = null;
         }
     }
 

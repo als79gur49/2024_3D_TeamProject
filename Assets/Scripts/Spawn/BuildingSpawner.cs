@@ -24,18 +24,44 @@ public class BuildingSpawner : MonoBehaviour
     private Building[] buildings;
     [SerializeField]
     private Transform[] spawnPoints;
+    private float totalChance; //chance의 총합
 
     [SerializeField]
-    private int spawnCount;
-    public int SpawnCount { get => spawnCount; private set { spawnCount = value; } }
+    private int maxSpawnCount;
+    private int currentSpawnCount;
+    public int MaxSpawnCount { get => maxSpawnCount; }
 
-    private float totalChance; //chance의 총합
+    [SerializeField][Range(0, 1)]
+    private float spawnDelay;
+
+    private GameObject lastBlock; //가장 최근 블럭의 정보를 통해 새로운 블럭 생성 가능성 확인
+
 
     private void Awake()
     {
         CalculateChance();
 
-        InputManager.OnSpawnRequested += Spawn;
+        lastBlock = null;
+        currentSpawnCount = 0;
+    }
+    private void Start()
+    {
+        StartCoroutine(nameof(SpawnCoroutine));
+    }
+    private IEnumerator SpawnCoroutine()
+    {
+        while(currentSpawnCount < MaxSpawnCount)
+        {
+            yield return new WaitUntil(() => lastBlock == null || lastBlock.GetComponent<PlayableMove>()?.IsMoving == false);
+
+            yield return new WaitForSeconds(spawnDelay);
+
+            lastBlock = SpawnBuilding();
+
+            currentSpawnCount++;
+        }
+
+        //최대 스폰 수 도달 시 처리
     }
 
     private void CalculateChance()
@@ -51,24 +77,14 @@ public class BuildingSpawner : MonoBehaviour
 
     }
 
-    private void Spawn()
-    {
-        SpawnCount--;
-
-        if (SpawnCount >= 0)
-        {
-            SpawnBuilding();
-        }
-        else
-        { 
-        
-        }
-    }
-
-    private void SpawnBuilding()
+    private GameObject SpawnBuilding()
     {
         Building building = buildings[GetRandomIndex()];
-        Instantiate(building.Prefab, GetRandomSpawnPoint(), Quaternion.identity);
+        GameObject block = Instantiate(building.Prefab, GetRandomSpawnPoint(), Quaternion.identity);
+
+        //Debug.Log(block.name + " 생성");
+
+        return block;
     }
 
     private int GetRandomIndex()

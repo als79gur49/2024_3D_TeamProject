@@ -14,10 +14,10 @@ TagManager:
   - 
   - Block
   - 
-  - 
-  - 
-  - 
-  - 
+  - TopBlock
+  - BottomBlock
+  - SideBlock
+  - NonInteractableBlock
   - 
   - 
   - 

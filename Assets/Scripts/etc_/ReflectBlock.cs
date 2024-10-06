@@ -1,17 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.LowLevel;
 
 public class ReflectBlock : MonoBehaviour
 {
-    //Collider가 자식에게 존재, PlayableMove는 부모에게 존재
-    Transform parentTransform;
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        parentTransform = collision.transform.parent;
-    
-        if (parentTransform ?.TryGetComponent<PlayableMove>(out PlayableMove block) ?? false)
+        if(other.gameObject.TryGetComponent<BlockCollider>(out BlockCollider block))
         {
-            block.HorizontalReflect();
+            block.MainBlock.GetComponent<PlayableMove>()?.HorizontalReflect();
+            Debug.Log($"{block.MainBlock.name}반사 좌우벽 충돌");
         }
     }
 
