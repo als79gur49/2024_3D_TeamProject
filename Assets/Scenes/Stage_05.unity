@@ -165,7 +165,6 @@ GameObject:
   - component: {fileID: 472498462}
   - component: {fileID: 472498464}
   - component: {fileID: 472498463}
-  - component: {fileID: 472498465}
   m_Layer: 5
   m_Name: Background_Sky
   m_TagString: Untagged
@@ -230,19 +229,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472498461}
   m_CullTransparentMesh: 1
---- !u!114 &472498465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 472498461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed5531b3fb25060439da5196c025bdec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followingPercent: 1
 --- !u!1001 &509957375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -419,7 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockLimit: 3
   originPosition: {fileID: 1605678641}
-  additionalYAxis: 3
+  additionalYAxis: 2
   moveSpeed: 1.01
 --- !u!1 &661237461
 GameObject:
@@ -432,7 +418,6 @@ GameObject:
   - component: {fileID: 661237462}
   - component: {fileID: 661237464}
   - component: {fileID: 661237463}
-  - component: {fileID: 661237465}
   m_Layer: 5
   m_Name: Background_City
   m_TagString: Untagged
@@ -497,19 +482,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661237461}
   m_CullTransparentMesh: 1
---- !u!114 &661237465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661237461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed5531b3fb25060439da5196c025bdec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followingPercent: 0.5
 --- !u!1 &675879479
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,21 +544,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildings:
   - prefab: {fileID: 818208723379477561, guid: be91b13937c1e124db11242ce7fcac5f, type: 3}
-    chance: 0
+    chance: 1000
   - prefab: {fileID: 2843942216229871153, guid: 80697b696a3226f4394fc6bcc98b14fe, type: 3}
-    chance: 0
+    chance: 1000
   - prefab: {fileID: 8627593058679114723, guid: 9abb9a884253b0e4ea3dcaae8f819ccc, type: 3}
-    chance: 0
+    chance: 1000
   - prefab: {fileID: 4231636213793431367, guid: f67f077eb5f87de409e71709db0673b5, type: 3}
-    chance: 0
+    chance: 1000
   - prefab: {fileID: 1702120989047049201, guid: 59c85e3ca4c18fd4ebc8454cab8b4201, type: 3}
     chance: 1000
   - prefab: {fileID: 2320646394839098853, guid: b661d31b3e41cec4bbb2884325a71a12, type: 3}
-    chance: 0
+    chance: 1000
   - prefab: {fileID: 8729359796159787799, guid: 1daa4f658d74d2e4f98d87eb312ca596, type: 3}
-    chance: 0
+    chance: 1000
   - prefab: {fileID: 5305479127450870497, guid: e105385dadf40ca4ba655c9d47d6530a, type: 3}
-    chance: 0
+    chance: 1000
   spawnPoints:
   - {fileID: 675879480}
   - {fileID: 116172433}
@@ -710,7 +682,7 @@ GameObject:
   - component: {fileID: 1531018227}
   - component: {fileID: 1531018226}
   m_Layer: 5
-  m_Name: BackgroundCanvas
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -786,7 +758,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531018225}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1466,6 +1438,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 817330638}
   - {fileID: 1831953095}
-  - {fileID: 1605678641}
   - {fileID: 1531018229}
+  - {fileID: 1605678641}
   - {fileID: 509957375}

@@ -10,21 +10,28 @@ public class SideBlockCollider : BlockCollider
         base.Start();
     }
 
-    // Update is called once per frame
-    //Side->Bottom 상대 오브젝트 삭제
-    //Side->Side 상대 오브젝트 삭제
     protected override void BottomCollidedLogic(BlockCollider otherBlock, PlayableMove otherMovement)
     {
-        Debug.Log($"{otherBlock.MainBlock.name}삭제 Side -> Bottom 충돌");
+        //Debug.Log($"{otherBlock.MainBlock.name}삭제 Side -> Bottom 충돌");
         //TODO: 목숨-1
-        SoundManager.Instance.PlayEffectAudio("Fail");
+        if (info.PrevGameObject != otherBlock.MainBlock.gameObject)
+        {
+            SoundManager.Instance.PlayEffectAudio("Fail");
+        }
+        info.PrevGameObject = otherBlock.MainBlock.gameObject;
+
         otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
     }
     protected override void SideCollidedLogic(BlockCollider otherBlock, PlayableMove otherMovement)
     {
         //Debug.Log($"{otherBlock.MainBlock.name}삭제 Side -> Side 충돌");
         //TODO: 목숨-1
-        SoundManager.Instance.PlayEffectAudio("Fail");
+        if (info.PrevGameObject != otherBlock.MainBlock.gameObject)
+        {
+            SoundManager.Instance.PlayEffectAudio("Fail");
+        }
+        info.PrevGameObject = otherBlock.MainBlock.gameObject;
+
         otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
     }
 

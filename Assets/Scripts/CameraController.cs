@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Transform originPosition;
 
-    [SerializeField][Range(-5,5)]
+    [SerializeField][Range(-5,10)]
     private float additionalYAxis;
     [SerializeField][Range(1,10)]
     private float moveSpeed; //카메라가 움직이지 않을 경우 인스펙터 창에서 값 바꿔보기
@@ -28,6 +28,8 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Count" + blockCount + "Test");
+
         MoveCameraPosition();
     }
 

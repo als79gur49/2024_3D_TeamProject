@@ -16,6 +16,8 @@ public class BlockInfo : MonoBehaviour
     public int MaxInteractableBlock { get => maxInteractableBlock;}
     public int InteractableBlock { get => interactableBlock; set => interactableBlock = value; }
 
+    public GameObject PrevGameObject { get; set; }
+
     public void DestroyBlock()
     {
         //TODO:블럭 삭제 함수 소리, 파티클 등 추가하기
@@ -23,3 +25,6 @@ public class BlockInfo : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
+//삭제 시 애니메이션 이용해서 삭제
+//성공 시 파티클, 실패 시 파티클

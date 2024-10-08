@@ -26,18 +26,27 @@ public class TopBlockCollider : BlockCollider
         }
         else
         {
-            //Debug.Log($"{otherBlock.MainBlock.name}昏力 Top -> Bottom 面倒");
+            if(info.PrevGameObject != otherBlock.MainBlock.gameObject)
+            {
+                SoundManager.Instance.PlayEffectAudio("Fail");
+            }
+            info.PrevGameObject = otherBlock.MainBlock.gameObject;
+
             otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
-            //TODO: 格见 -1
-            SoundManager.Instance.PlayEffectAudio("Fail");
             BlockManager.DestroyAllBlocks();
         }
     }
     protected override void SideCollidedLogic(BlockCollider otherBlock, PlayableMove otherMovement)
     {
-        Debug.Log($"{otherBlock.MainBlock.name}昏力 Top -> Side 面倒");
+        //Debug.Log($"{otherBlock.MainBlock.name}昏力 Top -> Side 面倒");
         //TODO: 格见-1
-        SoundManager.Instance.PlayEffectAudio("Fail");
+
+        if (info.PrevGameObject != otherBlock.MainBlock.gameObject)
+        {
+            SoundManager.Instance.PlayEffectAudio("Fail");
+        }
+        info.PrevGameObject = otherBlock.MainBlock.gameObject;
+
         otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
     }
 
@@ -63,7 +72,7 @@ public class TopBlockCollider : BlockCollider
             if (collidedBlocks.Contains(block.MainBlock))
             {
                 Debug.Log("府胶飘俊 昏力" + block.MainBlock.name);
-                collidedBlocks.Remove(block.MainBlock);
+                collidedBlocks.Remove(block.MainBlock); 
                 MainBlock.GetComponent<BlockInfo>().InteractableBlock--;
             }
         }
