@@ -38,7 +38,7 @@ public class BlockManager : MonoBehaviour
         {
             Debug.Log("Deleted");
 
-            block.GetComponent<BlockInfo>()?.DestroyBlock();
+            block?.GetComponent<BlockInfo>()?.DestroyBlock();
             //한 번에 삭제가 아닌 순차적 삭제 필요 시 코루틴 이용하기
             
         }

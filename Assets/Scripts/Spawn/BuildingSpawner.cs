@@ -19,12 +19,10 @@ public class Building
 
 public class BuildingSpawner : MonoBehaviour
 {
-
     [SerializeField]
     private Building[] buildings;
     [SerializeField]
     private Transform[] spawnPoints;
-    private float totalChance; //chance의 총합
 
     [SerializeField]
     private int maxSpawnCount;
@@ -33,9 +31,13 @@ public class BuildingSpawner : MonoBehaviour
 
     [SerializeField][Range(0, 1)]
     private float spawnDelay;
-
+    private float totalChance; //chance의 총합
     private GameObject lastBlock; //가장 최근 블럭의 정보를 통해 새로운 블럭 생성 가능성 확인
 
+    [SerializeField][Range(0, 10)]
+    private float horizontalSpeeds;
+    [SerializeField][Range(0, 10)]
+    private float verticalSpeeds;
 
     private void Awake()
     {
@@ -82,6 +84,8 @@ public class BuildingSpawner : MonoBehaviour
         Building building = buildings[GetRandomIndex()];
         GameObject block = Instantiate(building.Prefab, GetRandomSpawnPoint(), Quaternion.identity);
 
+        block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds;
+        block.GetComponent<PlayableMove>().VerticalSpeed = verticalSpeeds;
         //Debug.Log(block.name + " 생성");
 
         return block;

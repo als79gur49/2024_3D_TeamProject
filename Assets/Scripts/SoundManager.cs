@@ -133,8 +133,6 @@ public class SoundManager : MonoBehaviour
 
     public void PlayEffectAudio(string clipName)
     {
-        Debug.Log("HowMany"  + clipName );
-
         AudioClip resultClip = GetClip(clipName, effectClips);
 
         EffectPlayer.GetComponent<AudioSource>().PlayOneShot(resultClip);
