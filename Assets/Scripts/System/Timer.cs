@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     {
         if (isRunning)
         {
-            Debug.Log("Timer Update is being called");
+            //Debug.Log("Timer Update is being called");
             gameTime += Time.deltaTime;
             displayTime = gameTime;
         }

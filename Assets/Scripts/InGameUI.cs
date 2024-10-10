@@ -52,7 +52,7 @@ public class InGameUI : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Update is called");
+        //Debug.Log("Update is called");
 
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
