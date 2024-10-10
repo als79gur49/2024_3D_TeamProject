@@ -6,12 +6,11 @@ public class BlockInfo : MonoBehaviour
     private int maxInteractableBlock = 1;
     //자신의 위에 최대 붙을 수 있는 블럭의 개수;
 
-    [SerializeField][Range(0, 500)]
-    private int score;
+    [SerializeField][Range(0, 20)]
+    private int height;
 
-    public int Score { get => score; }
+    public int Height { get => height; }
 
-    [SerializeField]
     private int interactableBlock = 0;
     public int MaxInteractableBlock { get => maxInteractableBlock;}
     public int InteractableBlock { get => interactableBlock; set => interactableBlock = value; }
@@ -20,11 +19,9 @@ public class BlockInfo : MonoBehaviour
 
     public void DestroyBlock()
     {
-        //TODO:블럭 삭제 함수 소리, 파티클 등 추가하기
+        //TODO:체력 -1
 
+        SoundManager.Instance.PlayEffectAudio("Fail");
         Destroy(gameObject);
     }
 }
-
-//삭제 시 애니메이션 이용해서 삭제
-//성공 시 파티클, 실패 시 파티클

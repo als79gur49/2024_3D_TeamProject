@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
+
 
 [System.Serializable]
 public class KeyValuePair
@@ -12,7 +14,6 @@ public class KeyValuePair
     {
         return pair.clip;
     }
-
 }
 
 public class SoundManager : MonoBehaviour
@@ -67,17 +68,16 @@ public class SoundManager : MonoBehaviour
     private List<KeyValuePair> effectClips;
 
 
-
     private static SoundManager instance;
     public static SoundManager Instance
     {
         get
         {
-            if(instance == null) //Awake이전 호출 시, 초기화
+            if (instance == null) //Awake이전 호출 시, 초기화
             {
                 instance = FindObjectOfType<SoundManager>();
 
-                if(instance == null)
+                if (instance == null)
                 {
                     GameObject obj = new GameObject("SoundManager");
                     instance = obj.AddComponent<SoundManager>();
@@ -89,16 +89,16 @@ public class SoundManager : MonoBehaviour
             return instance;
         }
     }
-    
+
     private void OnValidate() //인스펙터 창에서 값 수정 시 호출되는 함수
     {
         MasterVolume = currentMasterVolume;
         BGMVolume = currentBGMVolume;
         EffectVolume = EffectVolume;
     }
-    private void Awake() //싱글톤 패턴
+    private void Awake() //싱글톤 패턴, 씬로드 시 추가코드
     {
-        if(instance != null && instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
 
@@ -108,7 +108,12 @@ public class SoundManager : MonoBehaviour
         instance = this;
 
         DontDestroyOnLoad(this.gameObject);
+
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
+
 
     public void PlayBGMAudio(AudioClip clip)
     {
@@ -116,46 +121,75 @@ public class SoundManager : MonoBehaviour
 
         BGMPlayer.GetComponent<AudioSource>().Play();
     }
-
-    public void PlayBGMAudio(string clipName)
+    public bool PlayBGMAudio(string clipName)
     {
         AudioClip resultClip = GetClip(clipName, bgmClips);
 
-        BGMPlayer.GetComponent<AudioSource>().clip = resultClip;
+        if (resultClip == null)
+        {
+            Debug.Log($"BGMSound에서 {clipName}을 찾을 수 없습니다.");
 
+            return false;
+        }
+
+        BGMPlayer.GetComponent<AudioSource>().clip = resultClip;
         BGMPlayer.GetComponent<AudioSource>().Play();
+
+        return true;
+    }
+    public bool PlayBGMAudio(string clipName, out AudioClip audioClip)
+    {
+        audioClip = GetClip(clipName, effectClips);
+
+        if (audioClip == null)
+        {
+            Debug.Log($"BGMSound에서 {clipName}을 찾을 수 없습니다.");
+
+            return false;
+        }
+
+        BGMPlayer.GetComponent<AudioSource>().clip = audioClip;
+        BGMPlayer.GetComponent<AudioSource>().Play();
+
+        return true;
     }
 
     public void PlayEffectAudio(AudioClip clip)
     {
         EffectPlayer.GetComponent<AudioSource>().PlayOneShot(clip);
     }
-
-    public void PlayEffectAudio(string clipName)
+    public bool PlayEffectAudio(string clipName)
     {
         AudioClip resultClip = GetClip(clipName, effectClips);
 
+        if (resultClip == null)
+        {
+            Debug.Log($"EffectSound에서 {clipName}을 찾을 수 없습니다.");
+
+            return false;
+        }
+
         EffectPlayer.GetComponent<AudioSource>().PlayOneShot(resultClip);
+
+        return true;
     }
-
-
-    private void Update()
+    public bool PlayEffectAudio(string clipName, out AudioClip audioClip)
     {
-        if(Input.GetKeyDown(KeyCode.A))
+        audioClip = GetClip(clipName, effectClips);
+
+        if (audioClip == null)
         {
-            PlayBGMAudio(GetClip("Test", bgmClips));
+            Debug.Log($"EffectSound에서 {clipName}을 찾을 수 없습니다.");
+
+            return false;
         }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            PlayEffectAudio(effectClips[0]);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            PlayEffectAudio("Test");
-        }
+
+        EffectPlayer.GetComponent<AudioSource>().PlayOneShot(audioClip);
+
+        return true;
     }
 
-    public AudioClip GetClip(string name, List<KeyValuePair> list)
+    private AudioClip GetClip(string name, List<KeyValuePair> list)
     {
         foreach (KeyValuePair pair in list)
         {
@@ -166,5 +200,15 @@ public class SoundManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        //다음 씬 로드시, 해당 씬에 사운드매니저가 존재한다면, 해당 사운드매니저의 초기값으로 초기화되고 삭제되어서
+        //변수들 강제 할당해주기
+
+        MasterVolume += 0;
+        BGMVolume += 0;
+        EffectVolume += 0;
     }
 }

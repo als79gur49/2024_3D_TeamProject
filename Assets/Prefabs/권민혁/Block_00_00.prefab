@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4375553813862886676}
+  - component: {fileID: 8028817443416073470}
   - component: {fileID: 597975295272185036}
   - component: {fileID: 9124055601876048270}
-  - component: {fileID: 8028817443416073470}
   m_Layer: 0
   m_Name: Block_00_00
   m_TagString: Untagged
@@ -37,6 +37,21 @@ Transform:
   - {fileID: 3410747556814730404}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8028817443416073470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818208723379477561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c38a8b34764a849b09eee996c72999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxInteractableBlock: 1
+  height: 10
+  interactableBlock: 0
 --- !u!114 &597975295272185036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,21 +95,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &8028817443416073470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818208723379477561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21c38a8b34764a849b09eee996c72999, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxInteractableBlock: 1
-  score: 0
-  interactableBlock: 0
 --- !u!1 &1438573364802167973
 GameObject:
   m_ObjectHideFlags: 0

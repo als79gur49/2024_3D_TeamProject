@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
 
         Debug.Log($"Stage {nextStage} unlocked and saved.");
+
     }
         
 

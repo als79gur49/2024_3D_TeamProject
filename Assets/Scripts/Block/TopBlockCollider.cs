@@ -20,7 +20,7 @@ public class TopBlockCollider : BlockCollider
                 BlockManager.PushBlock(otherBlock.MainBlock);
 
                 SoundManager.Instance.PlayEffectAudio("Success");
-                //TODO:: AddScore
+
                 Camera.main.GetComponent<CameraController>()?.SetCameraPosition();
             }
         }
@@ -28,26 +28,20 @@ public class TopBlockCollider : BlockCollider
         {
             if(info.PrevGameObject != otherBlock.MainBlock.gameObject)
             {
-                SoundManager.Instance.PlayEffectAudio("Fail");
+                BlockManager.DestroyAllBlocks();
+                StageManager.Instance.CurrentHealth--;
             }
             info.PrevGameObject = otherBlock.MainBlock.gameObject;
-
-            otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
-            BlockManager.DestroyAllBlocks();
         }
     }
     protected override void SideCollidedLogic(BlockCollider otherBlock, PlayableMove otherMovement)
     {
-        //Debug.Log($"{otherBlock.MainBlock.name}昏力 Top -> Side 面倒");
-        //TODO: 格见-1
-
         if (info.PrevGameObject != otherBlock.MainBlock.gameObject)
         {
-            SoundManager.Instance.PlayEffectAudio("Fail");
+            otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
+            StageManager.Instance.CurrentHealth--;
         }
-        info.PrevGameObject = otherBlock.MainBlock.gameObject;
-
-        otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
+        info.PrevGameObject = otherBlock.MainBlock.gameObject;     
     }
 
     private bool AddList(BlockCollider otherBlock, PlayableMove otherMovement)
@@ -78,3 +72,14 @@ public class TopBlockCollider : BlockCollider
         }
     }
 }
+
+/* //家府 免仿 盔屈
+if(info.PrevGameObject != otherBlock.MainBlock.gameObject)
+            {
+                //SoundManager.Instance.PlayEffectAudio("Fail");
+            }
+            info.PrevGameObject = otherBlock.MainBlock.gameObject;
+
+            otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
+            BlockManager.DestroyAllBlocks();
+*/

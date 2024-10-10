@@ -212,8 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxInteractableBlock: 1
-  score: 0
-  interactableBlock: 0
+  height: 10
 --- !u!1 &3461840646967236875
 GameObject:
   m_ObjectHideFlags: 0

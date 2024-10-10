@@ -537,5 +537,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxInteractableBlock: 1
-  score: 0
-  interactableBlock: 0
+  height: 20
