@@ -17,6 +17,9 @@ public class BlockInfo : MonoBehaviour
     public int InteractableBlock { get => interactableBlock; set => interactableBlock = value; }
 
     public GameObject PrevGameObject { get; set; }
+    //블럭이 움직이는 방법
+    //좌우 이동 -> Input -> 상하 이동 -> 다른 블럭과 접촉 시 조건에 따라 삭제 or 설치
+    //설치 시 고정 -> 오차 수정위해 설정된 위치로 조정
 
     public void DestroyBlock()
     {

@@ -117,13 +117,15 @@ public class SoundManager : MonoBehaviour
 
 
 
-    public void PlayBGMAudio(AudioClip clip)
+    public void PlayBGMAudio(AudioClip clip, float rate = 0.0f)
     {
         bgmPlayer.GetComponent<AudioSource>().clip = clip;
 
+        bgmPlayer.GetComponent<AudioSource>().time = rate * clip.length;
+
         bgmPlayer.GetComponent<AudioSource>().Play();
     }
-    public bool PlayBGMAudio(string clipName)
+    public bool PlayBGMAudio(string clipName, float rate = 0.0f)
     {
         AudioClip resultClip = GetClip(clipName, bgmClips);
 
@@ -134,12 +136,18 @@ public class SoundManager : MonoBehaviour
             return false;
         }
 
-        bgmPlayer.GetComponent<AudioSource>().clip = resultClip;
-        bgmPlayer.GetComponent<AudioSource>().Play();
+        if(rate > 1.0f)
+        {
+            Debug.Log($"BGMSound의 Rate{rate} > 1.0f가 커서 실행 불가능");
+
+            return false;
+        }
+
+        PlayBGMAudio(resultClip, rate);
 
         return true;
     }
-    public bool PlayBGMAudio(string clipName, out AudioClip audioClip)
+    public bool PlayBGMAudio(string clipName, out AudioClip audioClip, float rate)
     {
         audioClip = GetClip(clipName, effectClips);
 
@@ -150,11 +158,18 @@ public class SoundManager : MonoBehaviour
             return false;
         }
 
-        bgmPlayer.GetComponent<AudioSource>().clip = audioClip;
-        bgmPlayer.GetComponent<AudioSource>().Play();
+        if (rate > 1.0f)
+        {
+            Debug.Log($"BGMSound의 Rate{rate} > 1.0f가 커서 실행 불가능");
+
+            return false;
+        }
+
+        PlayBGMAudio(audioClip, rate);
 
         return true;
     }
+
 
     public void PlayEffectAudio(AudioClip clip)
     {

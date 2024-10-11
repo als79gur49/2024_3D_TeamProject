@@ -14,7 +14,7 @@ public class TopBlockCollider : BlockCollider
     {
         if (collidedBlocks.Count < info.MaxInteractableBlock)
         {
-            if (AddList(otherBlock, otherMovement))
+            if (AddList(otherBlock, otherMovement) && info.PrevGameObject != otherBlock.MainBlock.gameObject)
             {
                 otherMovement.StopBlock();
                 BlockManager.PushBlock(otherBlock.MainBlock);
@@ -29,7 +29,7 @@ public class TopBlockCollider : BlockCollider
             if(info.PrevGameObject != otherBlock.MainBlock.gameObject)
             {
                 BlockManager.DestroyAllBlocks();
-
+                Debug.Log("T->B");
                 otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
                 StageManager.Instance.CurrentHealth--;
             }
@@ -40,6 +40,7 @@ public class TopBlockCollider : BlockCollider
     {
         if (info.PrevGameObject != otherBlock.MainBlock.gameObject)
         {
+            Debug.Log("T->S");
             otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
             StageManager.Instance.CurrentHealth--;
         }

@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &5516242
 AudioSource:
   m_ObjectHideFlags: 0
@@ -542,6 +542,7 @@ MonoBehaviour:
   - {fileID: 2005775518}
   - {fileID: 1784980511}
   - {fileID: 32642062}
+  levelReached: 0
   lockObjects:
   - {fileID: 0}
   - {fileID: 366214858}
@@ -1821,6 +1822,18 @@ PrefabInstance:
     - target: {fileID: 7903866349052517207, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041751868298073320, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041751868298073320, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5be742985b8fd124bbc93dfad86574ba, type: 3}
+    - target: {fileID: 9041751868298073320, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5088,10 +5101,10 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 572092755}
   - {fileID: 221171016}
   - {fileID: 1299101740}
   - {fileID: 1259434899}
   - {fileID: 5516243}
   - {fileID: 458330375}
   - {fileID: 89140071}
-  - {fileID: 572092755}

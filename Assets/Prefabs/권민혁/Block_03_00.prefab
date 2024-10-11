@@ -255,9 +255,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 73282031221122744}
+  - component: {fileID: 3709442790053924378}
   - component: {fileID: 1268616896018969817}
   - component: {fileID: 5814036647987812429}
-  - component: {fileID: 3709442790053924378}
   m_Layer: 0
   m_Name: Block_03_00
   m_TagString: Untagged
@@ -284,6 +284,20 @@ Transform:
   - {fileID: 1288833158798910217}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3709442790053924378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702120989047049201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c38a8b34764a849b09eee996c72999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxInteractableBlock: 1
+  height: 10
 --- !u!114 &1268616896018969817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,20 +341,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &3709442790053924378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702120989047049201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21c38a8b34764a849b09eee996c72999, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxInteractableBlock: 1
-  height: 10
 --- !u!1 &4294324636489426438
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,9 +536,9 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.78, y: 0.48}
-      - {x: 0.2, y: -0.48}
+      - {x: 0.195, y: -0.48}
       - {x: -0.78, y: -0.48}
-      - {x: -0.2, y: 0.48}
+      - {x: -0.195, y: 0.48}
   m_UseDelaunayMesh: 0
 --- !u!1 &6117356952598823479
 GameObject:
@@ -691,8 +691,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.78, y: -0.5}
-      - {x: -0.7, y: -0.45}
-      - {x: 0.12, y: -0.45}
+      - {x: -0.72, y: -0.45}
+      - {x: 0.15, y: -0.45}
       - {x: 0.2, y: -0.5}
   m_UseDelaunayMesh: 0
 --- !u!1 &6831174139163779174

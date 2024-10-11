@@ -14,6 +14,7 @@ public class SideBlockCollider : BlockCollider
     {
         if (info.PrevGameObject != otherBlock.MainBlock.gameObject)
         {
+            Debug.Log("S->B");
             otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
             StageManager.Instance.CurrentHealth--;
         }
@@ -23,6 +24,7 @@ public class SideBlockCollider : BlockCollider
     {
         if (info.PrevGameObject != otherBlock.MainBlock.gameObject)
         {
+            Debug.Log("S->S");
             otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
             StageManager.Instance.CurrentHealth--;
         }

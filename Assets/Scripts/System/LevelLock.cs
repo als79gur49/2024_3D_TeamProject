@@ -7,11 +7,11 @@ public class LevelLock : MonoBehaviour
 {
     public GameObject stageNumObject; // 스테이지 버튼들을 포함한 오브젝트
     public GameObject[] checkMarks;  // 체크 표시 오브젝트 배열
+    [SerializeField]
     int levelReached; // 현재 오픈한 스테이지 번호
     private GameManager gameManager;
     private static LevelLock instance;
     public GameObject[] lockObjects;
-
 
     void Awake()
     {

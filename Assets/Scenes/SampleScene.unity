@@ -1180,6 +1180,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9041751868298073320, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041751868298073320, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b02f19ff6df04b4db3d016554ed451b, type: 3}
+    - target: {fileID: 9041751868298073320, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1472,21 +1484,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildings:
   - prefab: {fileID: 195406998957792892, guid: 8254b97242632aa45b5c1f4d3cc5644c, type: 3}
-    chance: 0
+    chance: 240
   - prefab: {fileID: 2843942216229871153, guid: 80697b696a3226f4394fc6bcc98b14fe, type: 3}
-    chance: 0
+    chance: 480
   - prefab: {fileID: 8627593058679114723, guid: 9abb9a884253b0e4ea3dcaae8f819ccc, type: 3}
-    chance: 0
+    chance: 587
   - prefab: {fileID: 4231636213793431367, guid: f67f077eb5f87de409e71709db0673b5, type: 3}
-    chance: 0
+    chance: 533
   - prefab: {fileID: 1702120989047049201, guid: 59c85e3ca4c18fd4ebc8454cab8b4201, type: 3}
-    chance: 1000
+    chance: 560
   - prefab: {fileID: 2320646394839098853, guid: b661d31b3e41cec4bbb2884325a71a12, type: 3}
-    chance: 0
+    chance: 547
   - prefab: {fileID: 8729359796159787799, guid: 1daa4f658d74d2e4f98d87eb312ca596, type: 3}
-    chance: 0
+    chance: 520
   - prefab: {fileID: 5305479127450870497, guid: e105385dadf40ca4ba655c9d47d6530a, type: 3}
-    chance: 0
+    chance: 523
   spawnPoints:
   - {fileID: 675879480}
   - {fileID: 116172433}
@@ -1948,6 +1960,7 @@ MonoBehaviour:
   targetHeight: 20
   currentHeight: 0
   currentHealth: 3
+  BGMName: Stage00
 --- !u!4 &1212804494
 Transform:
   m_ObjectHideFlags: 0
@@ -3143,9 +3156,9 @@ SceneRoots:
   - {fileID: 1831953095}
   - {fileID: 1605678641}
   - {fileID: 509957375}
-  - {fileID: 1531018229}
   - {fileID: 304196734}
   - {fileID: 1723218189}
+  - {fileID: 1531018229}
   - {fileID: 152940451}
   - {fileID: 1212804494}
   - {fileID: 2121583832}

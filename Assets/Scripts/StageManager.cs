@@ -53,6 +53,9 @@ public class StageManager : MonoBehaviour
         }
     }
 
+    [SerializeField]
+    private string BGMName;
+
     private static StageManager instance;
     public static StageManager Instance
     {
@@ -92,6 +95,8 @@ public class StageManager : MonoBehaviour
         instance = this;
 
         //DontDestroyOnLoad(this.gameObject);
+
+        SoundManager.Instance.PlayBGMAudio(BGMName, 0);
     }
 
 }

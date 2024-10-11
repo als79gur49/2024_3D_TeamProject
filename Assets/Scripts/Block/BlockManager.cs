@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,13 +11,23 @@ public class BlockManager : MonoBehaviour
     private static Stack<GameObject> blocks = new Stack<GameObject>();
     public static Stack<GameObject> Blocks {  get { return blocks; }  private set { blocks = value; } }
 
-    public static int BlocksHeight { get; private set; } = 0;
+    public static int BlocksHeight { get; private set; } = 10;
 
     public static void PushBlock(GameObject block)
     {
         Blocks.Push(block);
 
+        AdjustBlockHeight(block);
         SetBlocksHeight();
+
+    }
+
+    private static void AdjustBlockHeight(GameObject block)
+    {
+        //10 5 20 6 30 7 40 8 (height / 10) +4 
+        float targetYAxis = (BlocksHeight * 0.1f)  + (-5);
+
+        block.transform.position = new Vector3(block.transform.position.x, targetYAxis, block.transform.position.z);
     }
 
     public static void DestroyAllBlocks()
@@ -37,7 +48,7 @@ public class BlockManager : MonoBehaviour
 
     public static void SetBlocksHeight()
     {
-        BlocksHeight = 0;
+        BlocksHeight = 10; // 기초 블럭의 높이 
 
         foreach(GameObject block in Blocks)
         {
