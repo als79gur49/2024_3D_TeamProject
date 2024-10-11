@@ -21,13 +21,14 @@ public class BlockManager : MonoBehaviour
 
     public static void DestroyAllBlocks()
     {
-        while(Blocks.TryPop(out GameObject block))
+        BuildingSpawner spawner = FindObjectOfType<BuildingSpawner>();
+        spawner.DelaySpawn(0.7f);
+
+        while (Blocks.TryPop(out GameObject block))
         {
             Debug.Log("Deleted");
 
-            block?.GetComponent<BlockInfo>()?.DestroyBlock();
-            //한 번에 삭제가 아닌 순차적 삭제 필요 시 코루틴 이용하기
-            
+            block?.GetComponent<BlockInfo>()?.DelayDestroyBlock(0.3f);
         }
 
         SetBlocksHeight();
@@ -45,7 +46,7 @@ public class BlockManager : MonoBehaviour
 
         StageManager.Instance.CurrentHeight = BlocksHeight;
 
-        Debug.Log($"재설정된 블럭높이:{BlocksHeight}");
+        //Debug.Log($"재설정된 블럭높이:{BlocksHeight}");
     }
 
 }

@@ -21,9 +21,11 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private AudioMixer mAudioMixer;
     [SerializeField]
-    private GameObject BGMPlayer;
+    private GameObject bgmPlayer;
     [SerializeField]
-    private GameObject EffectPlayer;
+    private GameObject effectPlayer;
+
+    public GameObject EffectPlayer => effectPlayer;
 
     #region 볼륨 수정하는 변수들
     [SerializeField][Range(-80, 20)]
@@ -117,9 +119,9 @@ public class SoundManager : MonoBehaviour
 
     public void PlayBGMAudio(AudioClip clip)
     {
-        BGMPlayer.GetComponent<AudioSource>().clip = clip;
+        bgmPlayer.GetComponent<AudioSource>().clip = clip;
 
-        BGMPlayer.GetComponent<AudioSource>().Play();
+        bgmPlayer.GetComponent<AudioSource>().Play();
     }
     public bool PlayBGMAudio(string clipName)
     {
@@ -132,8 +134,8 @@ public class SoundManager : MonoBehaviour
             return false;
         }
 
-        BGMPlayer.GetComponent<AudioSource>().clip = resultClip;
-        BGMPlayer.GetComponent<AudioSource>().Play();
+        bgmPlayer.GetComponent<AudioSource>().clip = resultClip;
+        bgmPlayer.GetComponent<AudioSource>().Play();
 
         return true;
     }
@@ -148,17 +150,17 @@ public class SoundManager : MonoBehaviour
             return false;
         }
 
-        BGMPlayer.GetComponent<AudioSource>().clip = audioClip;
-        BGMPlayer.GetComponent<AudioSource>().Play();
+        bgmPlayer.GetComponent<AudioSource>().clip = audioClip;
+        bgmPlayer.GetComponent<AudioSource>().Play();
 
         return true;
     }
 
     public void PlayEffectAudio(AudioClip clip)
     {
-        EffectPlayer.GetComponent<AudioSource>().PlayOneShot(clip);
+        effectPlayer.GetComponent<AudioSource>().PlayOneShot(clip);
     }
-    public bool PlayEffectAudio(string clipName)
+    public bool PlayEffectAudio(string clipName, float volume = 1f)
     {
         AudioClip resultClip = GetClip(clipName, effectClips);
 
@@ -169,7 +171,7 @@ public class SoundManager : MonoBehaviour
             return false;
         }
 
-        EffectPlayer.GetComponent<AudioSource>().PlayOneShot(resultClip);
+        effectPlayer.GetComponent<AudioSource>().PlayOneShot(resultClip, volume);
 
         return true;
     }
@@ -184,7 +186,7 @@ public class SoundManager : MonoBehaviour
             return false;
         }
 
-        EffectPlayer.GetComponent<AudioSource>().PlayOneShot(audioClip);
+        effectPlayer.GetComponent<AudioSource>().PlayOneShot(audioClip);
 
         return true;
     }

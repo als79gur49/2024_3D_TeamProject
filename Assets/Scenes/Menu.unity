@@ -1774,6 +1774,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4193196168630272391, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+      propertyPath: bgmPlayer
+      value: 
+      objectReference: {fileID: 572092757}
+    - target: {fileID: 4193196168630272391, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+      propertyPath: effectPlayer
+      value: 
+      objectReference: {fileID: 572092756}
     - target: {fileID: 7903866349052517207, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.16672574
@@ -1819,6 +1827,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+--- !u!1 &572092756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3797952424999276231, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+  m_PrefabInstance: {fileID: 572092755}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &572092757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 325645270279497089, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+  m_PrefabInstance: {fileID: 572092755}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &580114292 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4595333137646299342, guid: 05c63d3446d5ccb418eadd415ab9058d, type: 3}
@@ -4220,7 +4238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b11cbf5a60f1343be7816e6d62bf77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonClipName: 
+  buttonClipName: Button
   changeScenes: {fileID: 1950717072}
   waitTimeMultiplier: 0.15
 --- !u!1 &2000509236

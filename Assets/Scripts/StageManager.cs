@@ -5,6 +5,10 @@ using UnityEngine;
 public class StageManager : MonoBehaviour
 {
     //각 스테이지별로 배치, 클리어 조건 설정, 게임 성공 및 실패 호출 하는 곳
+    //CurrentHeight프로퍼티는 GameClear, CurrentHealth프로퍼티는 GameFail
+
+    [SerializeField]
+    private int currentStageLevel;
 
     [Header("일정 높이 이상")]
     [SerializeField]
@@ -26,7 +30,7 @@ public class StageManager : MonoBehaviour
 
             if(currentHeight >= targetHeight && targetOnOffSwitch) 
             {
-                //Game Clear;
+                //GameManager.Instance.StageClear(currentStageLevel);
                 Debug.Log("Game Clear");
             }
         } 
@@ -39,11 +43,11 @@ public class StageManager : MonoBehaviour
         {
             currentHealth = value;
 
-            OnHealthChanged?.Invoke(currentHealth);
+            OnHealthChanged?.Invoke(currentStageLevel);
 
             if (currentHealth <= 0)
             {
-                //Game Fail;
+                //GameManager.Instance.StageClear(1);
                 Debug.Log("Game Fail");
             }
         }

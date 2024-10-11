@@ -56,8 +56,10 @@ public class PlayableMove : MonoBehaviour
     {
         if (IsMoving && !IsFalling)
         {
-            rigid.velocity = Vector2.right * HorizontalSpeed;
+            int dir = Random.Range(0, 2) == 0 ? 1 : -1;
 
+            rigid.velocity = Vector2.right * HorizontalSpeed * dir;
+            Random.Range(-1, 1);
             transform.parent = Camera.main.transform;
         }
     }

@@ -28,8 +28,9 @@ public class TopBlockCollider : BlockCollider
         {
             if(info.PrevGameObject != otherBlock.MainBlock.gameObject)
             {
-                otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
                 BlockManager.DestroyAllBlocks();
+
+                otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
                 StageManager.Instance.CurrentHealth--;
             }
             info.PrevGameObject = otherBlock.MainBlock.gameObject;

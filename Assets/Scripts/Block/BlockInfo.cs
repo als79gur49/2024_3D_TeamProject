@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BlockInfo : MonoBehaviour
@@ -19,9 +20,36 @@ public class BlockInfo : MonoBehaviour
 
     public void DestroyBlock()
     {
-        //TODO:Ã¼·Â -1
-
-        SoundManager.Instance.PlayEffectAudio("Fail");
+        if(SoundManager.Instance.EffectPlayer.GetComponent<AudioSource>().isPlaying)
+        {
+            SoundManager.Instance.PlayEffectAudio("Fail", 0.4f);
+        }
+        else
+        {
+            SoundManager.Instance.PlayEffectAudio("Fail");
+        }
+        
         Destroy(gameObject);
     }
+
+    public void DelayDestroyBlock(float delayTime)
+    {
+        StartCoroutine(ChangeColor(delayTime));
+    }
+
+    private IEnumerator ChangeColor(float duration)
+    {
+        SpriteRenderer sprite = GetComponentInChildren<SpriteRenderer>();
+
+        Color originColor = sprite.color;
+
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(duration);
+
+        sprite.color = originColor;
+
+        DestroyBlock();
+    }    
+
+
 }

@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     public LevelLock levelLock; // LevelLock 스크립트 참조
+
+    public static GameManager Instance => instance;
 
     void Awake()
     {
@@ -55,10 +58,13 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
 
         Debug.Log($"Stage {nextStage} unlocked and saved.");
-
+       
     }
         
-
+    public void StageFail(int stageIndex)
+    {
+        //이곳은 임시로 StageManager에서 Game Fail시 호출하는 곳
+    }
 
 
 }
