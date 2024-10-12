@@ -23,7 +23,6 @@ public class BackgroundFollowing : MonoBehaviour
     private float mainCameraYAxisDifference;
     private float prevMainCameraYAxis;
 
-    private static float test = 5.5f;
 
     private float rateOfChange00 = 0.0f;
     [SerializeField]

@@ -29,15 +29,19 @@ public class BuildingSpawner : MonoBehaviour
     private int currentSpawnCount;
     public int MaxSpawnCount { get => maxSpawnCount; }
 
-    [SerializeField][Range(0, 1)]
-    private float spawnDelay;
     private float totalChance; //chance의 총합
     private GameObject lastBlock; //가장 최근 블럭의 정보를 통해 새로운 블럭 생성 가능성 확인
-
+    #region 생성되는 블럭 관련 코드
+    [SerializeField][Range(0, 1)]
+    private float spawnDelay;
     [SerializeField][Range(0, 10)]
     private float horizontalSpeeds;
     [SerializeField][Range(0, 10)]
     private float verticalSpeeds;
+    #endregion
+
+    [SerializeField]
+    private GameObject tutorialObject; //튜토리얼 그림 사라지기 전까지 블럭 스폰 금지
 
     private void Awake()
     {
@@ -46,9 +50,13 @@ public class BuildingSpawner : MonoBehaviour
         lastBlock = null;
         currentSpawnCount = 0;
     }
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return new WaitUntil(()=>!tutorialObject.activeSelf);
+
         StartCoroutine(nameof(SpawnCoroutine));
+
+        yield return null;
     }
     private IEnumerator SpawnCoroutine()
     {
@@ -64,6 +72,24 @@ public class BuildingSpawner : MonoBehaviour
         }
 
         //최대 스폰 수 도달 시 처리
+    }
+
+
+
+    public void DelaySpawn(float delay)
+    {
+        //외부에서 호출
+        StartCoroutine(nameof(DelayCoroutine), delay);
+
+    }
+
+    private IEnumerator DelayCoroutine(float delay)
+    {
+        StopCoroutine(nameof(SpawnCoroutine));
+
+        yield return new WaitForSeconds(delay);
+
+        StartCoroutine(nameof(SpawnCoroutine));
     }
 
     private void CalculateChance()
