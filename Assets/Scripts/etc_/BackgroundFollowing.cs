@@ -38,9 +38,15 @@ public class BackgroundFollowing : MonoBehaviour
 =======
 >>>>>>> parent of ed3a944 (test깃허버)
 
+    [SerializeField]
+    private Sprite[] skyTextures;
+    [SerializeField]
+    private Sprite[] cityTextures;
+
     private float mainCameraYAxisDifference;
     private float prevMainCameraYAxis;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -58,6 +64,8 @@ public class BackgroundFollowing : MonoBehaviour
 =======
 >>>>>>> parent of 8830eeb (내용 병합 및 씬 이동 간 BGM알아서 플레이, 버그 수정)
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 8830eeb (내용 병합 및 씬 이동 간 BGM알아서 플레이, 버그 수정)
 =======
 >>>>>>> parent of 8830eeb (내용 병합 및 씬 이동 간 BGM알아서 플레이, 버그 수정)
     private static float test = 5.5f;
@@ -101,6 +109,27 @@ public class BackgroundFollowing : MonoBehaviour
             transform.Translate(new Vector3(0, mainCameraYAxisDifference * followingPercent, 0));
 
             prevMainCameraYAxis = Camera.main.transform.position.y;
+        }
+    }
+
+    void changeBackground(float timeLimit, float max)
+    {
+        float rate = (max - timeLimit) / max;
+
+        if(rate >= rateOfChange02)
+        {
+            skyObject.GetComponent<Image>().sprite = skyTextures[2];
+            cityObject.GetComponent<Image>().sprite = cityTextures[2];
+        }
+        else if(rate >= rateOfChange01)
+        {
+            skyObject.GetComponent<Image>().sprite = skyTextures[1];
+            cityObject.GetComponent<Image>().sprite = cityTextures[1];
+        }
+        else if(rate >= rateOfChange00)
+        {
+            skyObject.GetComponent<Image>().sprite = skyTextures[0];
+            cityObject.GetComponent<Image>().sprite = cityTextures[0];
         }
     }
 }

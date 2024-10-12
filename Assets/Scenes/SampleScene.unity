@@ -1472,6 +1472,7 @@ SceneRoots:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   - {fileID: 1531018229}
 =======
@@ -1495,3 +1496,6 @@ SceneRoots:
 >>>>>>> parent of 8830eeb (내용 병합 및 씬 이동 간 BGM알아서 플레이, 버그 수정)
 =======
 >>>>>>> parent of ed3a944 (test깃허버)
+=======
+  - {fileID: 1531018229}
+>>>>>>> parent of 8830eeb (내용 병합 및 씬 이동 간 BGM알아서 플레이, 버그 수정)
