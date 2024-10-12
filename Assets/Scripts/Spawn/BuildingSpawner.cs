@@ -37,12 +37,15 @@ public class BuildingSpawner : MonoBehaviour
     private GameObject lastBlock; //°¡Àå ÃÖ±Ù ºí·°ÀÇ Á¤º¸¸¦ ÅëÇØ »õ·Î¿î ºí·° »ý¼º °¡´É¼º È®ÀÎ
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     [SerializeField][Range(0, 10)]
     private float horizontalSpeeds;
     [SerializeField][Range(0, 10)]
     private float verticalSpeeds;
 >>>>>>> parent of 8830eeb (ë‚´ìš© ë³‘í•© ë° ì”¬ ì´ë™ ê°„ BGMì•Œì•„ì„œ í”Œë ˆì´, ë²„ê·¸ ìˆ˜ì •)
+=======
+>>>>>>> parent of ed3a944 (testê¹ƒí—ˆë²„)
 
     private void Awake()
     {
@@ -89,6 +92,7 @@ public class BuildingSpawner : MonoBehaviour
         Building building = buildings[GetRandomIndex()];
         GameObject block = Instantiate(building.Prefab, GetRandomSpawnPoint(), Quaternion.identity);
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -103,6 +107,8 @@ public class BuildingSpawner : MonoBehaviour
         block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds;
         block.GetComponent<PlayableMove>().VerticalSpeed = verticalSpeeds;
 >>>>>>> parent of 8830eeb (ë‚´ìš© ë³‘í•© ë° ì”¬ ì´ë™ ê°„ BGMì•Œì•„ì„œ í”Œë ˆì´, ë²„ê·¸ ìˆ˜ì •)
+=======
+>>>>>>> parent of ed3a944 (testê¹ƒí—ˆë²„)
         //Debug.Log(block.name + " »ý¼º");
 
         return block;
