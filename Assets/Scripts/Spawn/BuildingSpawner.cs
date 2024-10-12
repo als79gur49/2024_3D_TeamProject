@@ -36,6 +36,8 @@ public class BuildingSpawner : MonoBehaviour
 
     [SerializeField][Range(0, 10)]
     private float horizontalSpeeds;
+    [SerializeField][Range(0, 10)] // 0 ~ range
+    private int addedRandomhorizontalSpeeds;
     [SerializeField][Range(0, 10)]
     private float verticalSpeeds;
 
@@ -84,7 +86,7 @@ public class BuildingSpawner : MonoBehaviour
         Building building = buildings[GetRandomIndex()];
         GameObject block = Instantiate(building.Prefab, GetRandomSpawnPoint(), Quaternion.identity);
 
-        block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds;
+        block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds + Random.Range(0, addedRandomhorizontalSpeeds + 1);
         block.GetComponent<PlayableMove>().VerticalSpeed = verticalSpeeds;
         //Debug.Log(block.name + " »ý¼º");
 
