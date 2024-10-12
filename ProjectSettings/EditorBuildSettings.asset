@@ -4,32 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
+  m_Scenes: []
+=======
   m_Scenes:
   - enabled: 1
-<<<<<<< Updated upstream
-=======
-    path: Assets/Scenes/Title.unity
-    guid: e4422ed266a69f842bf9614de6252ffd
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 2d5abe8dd336d3f4ea0c05fea71fc5b8
-  - enabled: 1
-    path: Assets/Scenes/Stage01.unity
-    guid: 9fede5452df774142b7ddaf98b7aa29c
-  - enabled: 1
-    path: Assets/Scenes/Stage02.unity
-    guid: 4a799b9aca24d504c91f1563d690bec2
-  - enabled: 1
-    path: Assets/Scenes/Stage03.unity
-    guid: 87ffb7afbd78d9b47aeeccc154c73723
-  - enabled: 1
-    path: Assets/Scenes/Stage04.unity
-    guid: 5dab58123e32a4d428d87a8cedffff36
-  - enabled: 1
-    path: Assets/Scenes/Stage05.unity
-    guid: 1923b1b793e96274297bae79c6c52ac7
-  - enabled: 1
->>>>>>> Stashed changes
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+>>>>>>> parent of 8830eeb (내용 병합 및 씬 이동 간 BGM알아서 플레이, 버그 수정)
   m_configObjects: {}

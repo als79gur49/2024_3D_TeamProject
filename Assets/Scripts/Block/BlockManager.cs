@@ -1,11 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-<<<<<<< Updated upstream
-=======
-//using Unity.VisualScripting;
->>>>>>> Stashed changes
 using UnityEngine;
-//using UnityEngine.UIElements;
+using UnityEngine.UIElements;
 
 public class BlockManager : MonoBehaviour
 {
@@ -31,13 +27,6 @@ public class BlockManager : MonoBehaviour
         }
     }
 
-
-    public static void ResetBlocks()
-    {
-        Blocks.Clear();
-        BlocksHeight = 10;
-    }
-
     public static void PushBlock(GameObject block)
     {
         Blocks.Push(block);
@@ -49,32 +38,10 @@ public class BlockManager : MonoBehaviour
         {
             Debug.Log("Deleted");
 
-            block?.GetComponent<BlockInfo>()?.DestroyBlock();
+            block.GetComponent<BlockInfo>()?.DestroyBlock();
             //한 번에 삭제가 아닌 순차적 삭제 필요 시 코루틴 이용하기
             
         }
         Camera.main.GetComponent<CameraController>().SetCameraPosition();
     }
-<<<<<<< Updated upstream
-=======
-
-    public static void SetBlocksHeight()
-    {
-        BlocksHeight = 10; // 기초 블럭의 높이 
-
-        foreach(GameObject block in Blocks)
-        {
-            if(block)
-            {
-                BlocksHeight += block?.GetComponent<BlockInfo>().Height ?? 0;
-            }
-            //BlocksHeight += block?.GetComponent<BlockInfo>().Height ?? 0;
-        }
-
-        StageManager.Instance.CurrentHeight = BlocksHeight;
-
-        //Debug.Log($"재설정된 블럭높이:{BlocksHeight}");
-    }
-
->>>>>>> Stashed changes
 }

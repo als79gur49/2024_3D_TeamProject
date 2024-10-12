@@ -19,10 +19,12 @@ public class Building
 
 public class BuildingSpawner : MonoBehaviour
 {
+
     [SerializeField]
     private Building[] buildings;
     [SerializeField]
     private Transform[] spawnPoints;
+    private float totalChance; //chanceÀÇ ÃÑÇÕ
 
     [SerializeField]
     private int maxSpawnCount;
@@ -31,15 +33,16 @@ public class BuildingSpawner : MonoBehaviour
 
     [SerializeField][Range(0, 1)]
     private float spawnDelay;
-    private float totalChance; //chanceÀÇ ÃÑÇÕ
+
     private GameObject lastBlock; //°¡Àå ÃÖ±Ù ºí·°ÀÇ Á¤º¸¸¦ ÅëÇØ »õ·Î¿î ºí·° »ı¼º °¡´É¼º È®ÀÎ
 
+<<<<<<< HEAD
+=======
     [SerializeField][Range(0, 10)]
     private float horizontalSpeeds;
-    [SerializeField][Range(0, 10)] // 0 ~ range
-    private int addedRandomhorizontalSpeeds;
     [SerializeField][Range(0, 10)]
     private float verticalSpeeds;
+>>>>>>> parent of 8830eeb (ë‚´ìš© ë³‘í•© ë° ì”¬ ì´ë™ ê°„ BGMì•Œì•„ì„œ í”Œë ˆì´, ë²„ê·¸ ìˆ˜ì •)
 
     private void Awake()
     {
@@ -86,8 +89,20 @@ public class BuildingSpawner : MonoBehaviour
         Building building = buildings[GetRandomIndex()];
         GameObject block = Instantiate(building.Prefab, GetRandomSpawnPoint(), Quaternion.identity);
 
-        block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds + Random.Range(0, addedRandomhorizontalSpeeds + 1);
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 8830eeb (ë‚´ìš© ë³‘í•© ë° ì”¬ ì´ë™ ê°„ BGMì•Œì•„ì„œ í”Œë ˆì´, ë²„ê·¸ ìˆ˜ì •)
+=======
+>>>>>>> parent of 8830eeb (ë‚´ìš© ë³‘í•© ë° ì”¬ ì´ë™ ê°„ BGMì•Œì•„ì„œ í”Œë ˆì´, ë²„ê·¸ ìˆ˜ì •)
+>>>>>>> Stashed changes
+        block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds;
         block.GetComponent<PlayableMove>().VerticalSpeed = verticalSpeeds;
+>>>>>>> parent of 8830eeb (ë‚´ìš© ë³‘í•© ë° ì”¬ ì´ë™ ê°„ BGMì•Œì•„ì„œ í”Œë ˆì´, ë²„ê·¸ ìˆ˜ì •)
         //Debug.Log(block.name + " »ı¼º");
 
         return block;

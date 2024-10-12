@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -134,6 +133,8 @@ public class SoundManager : MonoBehaviour
 
     public void PlayEffectAudio(string clipName)
     {
+        Debug.Log("HowMany"  + clipName );
+
         AudioClip resultClip = GetClip(clipName, effectClips);
 
         EffectPlayer.GetComponent<AudioSource>().PlayOneShot(resultClip);
@@ -156,16 +157,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-<<<<<<< Updated upstream
     public AudioClip GetClip(string name, List<KeyValuePair> list)
-=======
-    public void StopBGMAudio()
-    {
-        effectPlayer.GetComponent<AudioSource>().Stop();
-    }
-
-    private AudioClip GetClip(string name, List<KeyValuePair> list)
->>>>>>> Stashed changes
     {
         foreach (KeyValuePair pair in list)
         {
@@ -177,35 +169,4 @@ public class SoundManager : MonoBehaviour
 
         return null;
     }
-<<<<<<< Updated upstream
-=======
-
-    private string GetClipName(AudioClip clip, List<KeyValuePair> list)
-    {
-        foreach (KeyValuePair pair in list)
-        {
-            if (pair.clip == clip)
-            {
-                return pair.name;
-            }
-        }
-
-        return null;
-    }
-
-    public string GetBGMClipName()
-    {
-        return GetClipName(bgmPlayer.GetComponent<AudioSource>().clip, bgmClips);
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        //다음 씬 로드시, 해당 씬에 사운드매니저가 존재한다면, 해당 사운드매니저의 초기값으로 초기화되고 삭제되어서
-        //변수들 강제 할당해주기
-
-        MasterVolume += 0;
-        BGMVolume += 0;
-        EffectVolume += 0;
-    }
->>>>>>> Stashed changes
 }
