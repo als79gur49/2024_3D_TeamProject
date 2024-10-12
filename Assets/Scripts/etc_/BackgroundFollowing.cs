@@ -7,6 +7,7 @@ public class BackgroundFollowing : MonoBehaviour
     [SerializeField][Range(0,1)]
     private float followingPercent = 1.0f;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     [SerializeField]
     private Sprite[] skyTextures;
@@ -34,10 +35,13 @@ public class BackgroundFollowing : MonoBehaviour
     private Sprite[] skyTextures;
     [SerializeField]
     private Sprite[] cityTextures;
+=======
+>>>>>>> parent of ed3a944 (test깃허버)
 
     private float mainCameraYAxisDifference;
     private float prevMainCameraYAxis;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< Updated upstream
@@ -86,33 +90,17 @@ public class BackgroundFollowing : MonoBehaviour
     {
         if(prevMainCameraYAxis != Camera.main.transform.position.y)
 >>>>>>> parent of ed3a944 (test깃허버)
+=======
+    void Update()
+    {
+        if(prevMainCameraYAxis != Camera.main.transform.position.y)
+>>>>>>> parent of ed3a944 (test깃허버)
         {
             mainCameraYAxisDifference = Camera.main.transform.position.y - prevMainCameraYAxis;
 
             transform.Translate(new Vector3(0, mainCameraYAxisDifference * followingPercent, 0));
 
             prevMainCameraYAxis = Camera.main.transform.position.y;
-        }
-    }
-
-    void changeBackground(float timeLimit, float max)
-    {
-        float rate = (max - timeLimit) / max;
-
-        if(rate >= rateOfChange02)
-        {
-            skyObject.GetComponent<Image>().sprite = skyTextures[2];
-            cityObject.GetComponent<Image>().sprite = cityTextures[2];
-        }
-        else if(rate >= rateOfChange01)
-        {
-            skyObject.GetComponent<Image>().sprite = skyTextures[1];
-            cityObject.GetComponent<Image>().sprite = cityTextures[1];
-        }
-        else if(rate >= rateOfChange00)
-        {
-            skyObject.GetComponent<Image>().sprite = skyTextures[0];
-            cityObject.GetComponent<Image>().sprite = cityTextures[0];
         }
     }
 }

@@ -38,12 +38,15 @@ public class BuildingSpawner : MonoBehaviour
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     [SerializeField][Range(0, 10)]
     private float horizontalSpeeds;
     [SerializeField][Range(0, 10)]
     private float verticalSpeeds;
 >>>>>>> parent of 8830eeb (내용 병합 및 씬 이동 간 BGM알아서 플레이, 버그 수정)
+=======
+>>>>>>> parent of ed3a944 (test깃허버)
 =======
 >>>>>>> parent of ed3a944 (test깃허버)
 
@@ -94,6 +97,7 @@ public class BuildingSpawner : MonoBehaviour
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -110,6 +114,8 @@ public class BuildingSpawner : MonoBehaviour
         block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds;
         block.GetComponent<PlayableMove>().VerticalSpeed = verticalSpeeds;
 >>>>>>> parent of 8830eeb (내용 병합 및 씬 이동 간 BGM알아서 플레이, 버그 수정)
+=======
+>>>>>>> parent of ed3a944 (test깃허버)
 =======
 >>>>>>> parent of ed3a944 (test깃허버)
         //Debug.Log(block.name + " ����");
