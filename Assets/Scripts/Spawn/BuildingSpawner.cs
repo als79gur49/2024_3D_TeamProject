@@ -93,6 +93,7 @@ public class BuildingSpawner : MonoBehaviour
         GameObject block = Instantiate(building.Prefab, GetRandomSpawnPoint(), Quaternion.identity);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -104,6 +105,8 @@ public class BuildingSpawner : MonoBehaviour
 =======
 >>>>>>> parent of 8830eeb (내용 병합 및 씬 이동 간 BGM알아서 플레이, 버그 수정)
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 8830eeb (내용 병합 및 씬 이동 간 BGM알아서 플레이, 버그 수정)
         block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds;
         block.GetComponent<PlayableMove>().VerticalSpeed = verticalSpeeds;
 >>>>>>> parent of 8830eeb (내용 병합 및 씬 이동 간 BGM알아서 플레이, 버그 수정)

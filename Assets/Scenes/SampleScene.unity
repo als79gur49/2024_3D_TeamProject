@@ -1470,6 +1470,7 @@ SceneRoots:
   - {fileID: 1531018229}
   - {fileID: 509957375}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   - {fileID: 1531018229}
 =======
@@ -1488,3 +1489,6 @@ SceneRoots:
 >>>>>>> Stashed changes
 =======
 >>>>>>> parent of ed3a944 (test깃허버)
+=======
+  - {fileID: 1531018229}
+>>>>>>> parent of 8830eeb (내용 병합 및 씬 이동 간 BGM알아서 플레이, 버그 수정)
