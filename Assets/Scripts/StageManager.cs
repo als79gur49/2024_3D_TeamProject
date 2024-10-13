@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class StageManager : MonoBehaviour
 {
     //각 스테이지별로 배치, 클리어 조건 설정, 게임 성공 및 실패 호출 하는 곳
@@ -27,7 +26,10 @@ public class StageManager : MonoBehaviour
     public delegate void ChangedHealth(int currenthealth);
     public static event ChangedHealth OnHealthChanged;
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     public int CurrentHeight
     {
         get => currentHeight;
@@ -43,7 +45,6 @@ public class StageManager : MonoBehaviour
                 {
                     inGameUI.gameClear();
                 }
-                Debug.Log("Game Clear");
             }
         }
     }
@@ -63,7 +64,6 @@ public class StageManager : MonoBehaviour
                 {
                     inGameUI.gameOver();
                 }
-                Debug.Log("Game Fail");
             }
         }
     }
@@ -102,7 +102,7 @@ public class StageManager : MonoBehaviour
 
     
 
-
+   
 
     private void Awake() //싱글톤 패턴
     {
@@ -119,5 +119,11 @@ public class StageManager : MonoBehaviour
 
         //DontDestroyOnLoad(this.gameObject);
     }
+
+    private void Start()
+    {
+        BlockManager.Initialize();
+    }
+
 
 }

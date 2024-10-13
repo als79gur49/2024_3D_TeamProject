@@ -2887,16 +2887,16 @@ RectTransform:
   - {fileID: 1098303815}
   - {fileID: 74539560}
   - {fileID: 946143768}
-  - {fileID: 713406821}
-  - {fileID: 1253284347}
-  - {fileID: 123088845}
-  - {fileID: 336441970}
-  - {fileID: 1099083373}
   - {fileID: 671584501}
   - {fileID: 969191847}
   - {fileID: 2005775519}
   - {fileID: 1784980512}
   - {fileID: 32642063}
+  - {fileID: 713406821}
+  - {fileID: 1253284347}
+  - {fileID: 123088845}
+  - {fileID: 336441970}
+  - {fileID: 1099083373}
   m_Father: {fileID: 1299101740}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2942,6 +2942,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153917892}
   m_CullTransparentMesh: 1
+--- !u!1 &1248805078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1248805080}
+  - component: {fileID: 1248805079}
+  m_Layer: 0
+  m_Name: SceneBGMInitialize
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1248805079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248805078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 068ff67ed08a0074db32b59b65f3d3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneBGMName: TitleMenu
+--- !u!4 &1248805080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248805078}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 205, y: 115, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1253284346
 GameObject:
   m_ObjectHideFlags: 0
@@ -5162,4 +5207,8 @@ SceneRoots:
   - {fileID: 5516243}
   - {fileID: 458330375}
   - {fileID: 89140071}
+<<<<<<< Updated upstream
   - {fileID: 316218445}
+=======
+  - {fileID: 1248805080}
+>>>>>>> Stashed changes

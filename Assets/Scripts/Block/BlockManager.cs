@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 //using Unity.VisualScripting;
 >>>>>>> Stashed changes
 using UnityEngine;
 //using UnityEngine.UIElements;
+=======
+using UnityEngine;
+>>>>>>> Stashed changes
 
 public class BlockManager : MonoBehaviour
 {
@@ -74,6 +78,15 @@ public class BlockManager : MonoBehaviour
         StageManager.Instance.CurrentHeight = BlocksHeight;
 
         //Debug.Log($"재설정된 블럭높이:{BlocksHeight}");
+    }
+
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+    public static void Initialize()
+    {
+        Blocks.Clear();
+        SetBlocksHeight();
     }
 
 >>>>>>> Stashed changes

@@ -178,8 +178,12 @@ public class SoundManager : MonoBehaviour
         return null;
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 
+=======
+    //GetBGMClipName
+>>>>>>> Stashed changes
     private string GetClipName(AudioClip clip, List<KeyValuePair> list)
     {
         foreach (KeyValuePair pair in list)
@@ -193,9 +197,17 @@ public class SoundManager : MonoBehaviour
         return null;
     }
 
+<<<<<<< Updated upstream
     public string GetBGMClipName()
     {
         return GetClipName(bgmPlayer.GetComponent<AudioSource>().clip, bgmClips);
+=======
+    public string CurrentBGMName()
+    {
+        AudioClip clip = bgmPlayer.GetComponent<AudioSource>().clip;
+
+        return GetClipName(clip, bgmClips);
+>>>>>>> Stashed changes
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

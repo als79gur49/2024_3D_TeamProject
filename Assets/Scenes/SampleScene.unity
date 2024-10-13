@@ -371,6 +371,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be91b13937c1e124db11242ce7fcac5f, type: 3}
+--- !u!1 &513644672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 513644674}
+  - component: {fileID: 513644673}
+  m_Layer: 0
+  m_Name: SceneBGMInitialize
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &513644673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513644672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 068ff67ed08a0074db32b59b65f3d3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneBGMName: Stage00
+--- !u!4 &513644674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513644672}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 205, y: 115, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,7 +1320,6 @@ MonoBehaviour:
   targetHeight: 40
   currentHeight: 0
   currentHealth: 3
-  BGMName: Stage00
 --- !u!4 &1212804494
 Transform:
   m_ObjectHideFlags: 0
@@ -1578,8 +1622,11 @@ Transform:
   m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1 &1831953093
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1796554411
 >>>>>>> Stashed changes
 GameObject:
@@ -2446,6 +2493,7 @@ SceneRoots:
   - {fileID: 1531018229}
   - {fileID: 152940451}
   - {fileID: 2121583832}
+<<<<<<< Updated upstream
   - {fileID: 1399245448}
 >>>>>>> Stashed changes
 =======
@@ -2458,3 +2506,7 @@ SceneRoots:
 =======
   - {fileID: 1531018229}
 >>>>>>> parent of 8830eeb (내용 병합 및 씬 이동 간 BGM알아서 플레이, 버그 수정)
+=======
+  - {fileID: 1212804494}
+  - {fileID: 513644674}
+>>>>>>> Stashed changes

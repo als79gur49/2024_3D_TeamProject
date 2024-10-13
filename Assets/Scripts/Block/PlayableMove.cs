@@ -6,7 +6,11 @@ using UnityEngine;
 public class PlayableMove : MonoBehaviour
 {
     //블럭의 이동을 담당
+<<<<<<< Updated upstream
     [SerializeField]//[Range(0, 10)]
+=======
+    [SerializeField][Range(0, 20)]
+>>>>>>> Stashed changes
     private float horizontalSpeed;
     [SerializeField][Range(0, 10)]
     private float verticalSpeed;

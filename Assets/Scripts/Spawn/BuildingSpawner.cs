@@ -43,8 +43,13 @@ public class BuildingSpawner : MonoBehaviour
 >>>>>>> parent of 039c47f (문제 수정중)
     [SerializeField][Range(0, 10)]
     private float horizontalSpeeds;
+<<<<<<< Updated upstream
     [SerializeField][Range(0, 10)] // 0 ~ range
     private int addedRandomhorizontalSpeeds;
+=======
+    [SerializeField][Range(0, 5)]
+    private int addedHorRandomRange;
+>>>>>>> Stashed changes
     [SerializeField][Range(0, 10)]
     private float verticalSpeeds;
 <<<<<<< HEAD
@@ -100,7 +105,9 @@ public class BuildingSpawner : MonoBehaviour
     {
         Building building = buildings[GetRandomIndex()];
         GameObject block = Instantiate(building.Prefab, GetRandomSpawnPoint(), Quaternion.identity);
+        int randomSpeed = Random.Range(0, addedHorRandomRange + 1);
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -132,6 +139,11 @@ public class BuildingSpawner : MonoBehaviour
         block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds + Random.Range(0, addedRandomhorizontalSpeeds + 1);
         block.GetComponent<PlayableMove>().VerticalSpeed = verticalSpeeds;
 >>>>>>> parent of 039c47f (문제 수정중)
+=======
+        block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds + randomSpeed;
+        block.GetComponent<PlayableMove>().VerticalSpeed = verticalSpeeds;
+
+>>>>>>> Stashed changes
         //Debug.Log(block.name + " ����");
 
         return block;

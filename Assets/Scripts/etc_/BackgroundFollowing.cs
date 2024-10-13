@@ -18,6 +18,7 @@ public class BackgroundFollowing : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 
+<<<<<<< Updated upstream
     [SerializeField]
     private Sprite[] skyTextures;
     [SerializeField]
@@ -92,6 +93,11 @@ public class BackgroundFollowing : MonoBehaviour
     private float rateOfChange02 = 0.7f;
 
 =======
+>>>>>>> Stashed changes
+=======
+    private float mainCameraYAxisDifference;
+    private float prevMainCameraYAxis;
+
 >>>>>>> Stashed changes
     void Update()
     {
