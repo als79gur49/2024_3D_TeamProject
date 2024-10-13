@@ -11,7 +11,7 @@ public class SceneBGMInitialize : MonoBehaviour
     private string sceneBGMName;
     private void Awake()
     {
-        
+
     }
 
     private void Start()

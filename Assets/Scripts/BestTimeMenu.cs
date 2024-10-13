@@ -11,7 +11,7 @@ public class BestTimeDisplay : MonoBehaviour
         for (int i = 0; i < bestTimeTexts.Length; i++)
         {
             float bestTime = PlayerPrefs.GetFloat($"BestTime_{i}", float.MaxValue);
-            //Debug.Log($"Loaded best time for stage {i}: {bestTime}");
+            Debug.Log($"Loaded best time for stage {i}: {bestTime}");
 
             if (bestTime == float.MaxValue)
             {
@@ -24,7 +24,7 @@ public class BestTimeDisplay : MonoBehaviour
                 int seconds = (int)bestTime % 60;
                 int milliseconds = (int)((bestTime - Mathf.Floor(bestTime)) * 1000);
 
-                //Debug.Log($"Formatted best time for stage {i}: {string.Format("{0:00}:{1:00}:{2:00}.{3:000}", hours, minutes, seconds, milliseconds)}");
+                Debug.Log($"Formatted best time for stage {i}: {string.Format("{0:00}:{1:00}:{2:00}.{3:000}", hours, minutes, seconds, milliseconds)}");
 
                 bestTimeTexts[i].text = string.Format("Stage {0}: {1:00}:{2:00}:{3:00}.{4:000}", i + 1, hours, minutes, seconds, milliseconds);
              

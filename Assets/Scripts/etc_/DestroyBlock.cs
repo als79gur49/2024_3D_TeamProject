@@ -10,9 +10,9 @@ public class DestroyBlock : MonoBehaviour
         {
             if(movement.IsMoving)
             {
-                SoundManager.Instance.PlayEffectAudio("Fail");
+                StageManager.Instance.CurrentHealth--;
+
                 block.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
-                Debug.Log($"{block.MainBlock.name}삭제 하단벽 충돌");
             }
         }
     }

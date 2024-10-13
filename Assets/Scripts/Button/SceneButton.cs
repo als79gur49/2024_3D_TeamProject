@@ -5,8 +5,6 @@ public class SceneButton : MonoBehaviour
 {
     [SerializeField]
     private string buttonClipName; //사운드매니저의 인덱스에서 가져오고 싶다.
-    [SerializeField]
-    private string stageBGMClipName;
 
     public ChangeScenes changeScenes;
 
@@ -21,7 +19,6 @@ public class SceneButton : MonoBehaviour
     {                                            //"Button"
         if (SoundManager.Instance.PlayEffectAudio(buttonClipName, out AudioClip audioClip))
         {
-            SoundManager.Instance.PlayBGMAudio(stageBGMClipName);
             yield return new WaitForSeconds(audioClip.length * waitTimeMultiplier);
         }
 

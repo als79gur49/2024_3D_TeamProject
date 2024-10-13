@@ -288,11 +288,7 @@ MonoBehaviour:
   - {fileID: 620752155}
   - {fileID: 472939566}
   - {fileID: 1796554413}
-<<<<<<< Updated upstream
-  stageIndex: 0
-=======
   stageIndex: 2
->>>>>>> Stashed changes
 --- !u!114 &152940448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1013,54 +1009,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be91b13937c1e124db11242ce7fcac5f, type: 3}
-<<<<<<< Updated upstream
-=======
---- !u!1 &513644672
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 513644674}
-  - component: {fileID: 513644673}
-  m_Layer: 0
-  m_Name: SceneBGMInitialize
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &513644673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513644672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 068ff67ed08a0074db32b59b65f3d3ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneBGMName: Stage01
---- !u!4 &513644674
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513644672}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 205, y: 115, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,13 +1134,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
-    - target: {fileID: 309405843372075011, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-=======
->>>>>>> Stashed changes
     - target: {fileID: 4193196168630272391, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
       propertyPath: bgmPlayer
       value: 
@@ -1243,11 +1184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041751868298073320, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
       propertyPath: Loop
-<<<<<<< Updated upstream
-      value: 0
-=======
       value: 1
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 9041751868298073320, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
       propertyPath: m_audioClip
@@ -1255,11 +1192,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 5b02f19ff6df04b4db3d016554ed451b, type: 3}
     - target: {fileID: 9041751868298073320, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
       propertyPath: m_PlayOnAwake
-<<<<<<< Updated upstream
-      value: 0
-=======
       value: 1
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1553,7 +1486,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildings:
   - prefab: {fileID: 195406998957792892, guid: 8254b97242632aa45b5c1f4d3cc5644c, type: 3}
-<<<<<<< Updated upstream
     chance: 1000
   - prefab: {fileID: 2843942216229871153, guid: 80697b696a3226f4394fc6bcc98b14fe, type: 3}
     chance: 1000
@@ -1561,36 +1493,13 @@ MonoBehaviour:
     chance: 1000
   - prefab: {fileID: 4231636213793431367, guid: f67f077eb5f87de409e71709db0673b5, type: 3}
     chance: 1000
-  - prefab: {fileID: 1702120989047049201, guid: 59c85e3ca4c18fd4ebc8454cab8b4201, type: 3}
-    chance: 0
-  - prefab: {fileID: 2320646394839098853, guid: b661d31b3e41cec4bbb2884325a71a12, type: 3}
-    chance: 0
-  - prefab: {fileID: 8729359796159787799, guid: 1daa4f658d74d2e4f98d87eb312ca596, type: 3}
-    chance: 0
-  - prefab: {fileID: 5305479127450870497, guid: e105385dadf40ca4ba655c9d47d6530a, type: 3}
-    chance: 0
-  - prefab: {fileID: 5233443451831593197, guid: 9df8ea6ef0103f64e84645d654060b27, type: 3}
-    chance: 0
-=======
-    chance: 240
-  - prefab: {fileID: 2843942216229871153, guid: 80697b696a3226f4394fc6bcc98b14fe, type: 3}
-    chance: 480
-  - prefab: {fileID: 8627593058679114723, guid: 9abb9a884253b0e4ea3dcaae8f819ccc, type: 3}
-    chance: 587
-  - prefab: {fileID: 4231636213793431367, guid: f67f077eb5f87de409e71709db0673b5, type: 3}
-    chance: 533
->>>>>>> Stashed changes
   spawnPoints:
   - {fileID: 675879480}
   - {fileID: 116172433}
   maxSpawnCount: 50
   spawnDelay: 0
   horizontalSpeeds: 5
-<<<<<<< Updated upstream
-  addedRandomhorizontalSpeeds: 10
-=======
   addedHorRandomRange: 2
->>>>>>> Stashed changes
   verticalSpeeds: 10
   tutorialObject: {fileID: 1818384065}
 --- !u!4 &817330638
@@ -2053,10 +1962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeeea0230d046f94f9a77954586079e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-=======
-  currentStageLevel: 3
->>>>>>> Stashed changes
   targetOnOffSwitch: 1
   targetHeight: 40
   currentHeight: 0
@@ -2076,54 +1981,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
---- !u!1 &1399245446
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1399245448}
-  - component: {fileID: 1399245447}
-  m_Layer: 0
-  m_Name: BGMSoundInit
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1399245447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399245446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eaedae731ff4d24aaf109222abe0fa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneBGMClipName: Stage01
---- !u!4 &1399245448
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399245446}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> Stashed changes
 --- !u!1 &1531018225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,6 +2152,51 @@ Transform:
   - {fileID: 116172433}
   m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1752657637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1752657639}
+  - component: {fileID: 1752657638}
+  m_Layer: 0
+  m_Name: SceneBGMInitialize
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1752657638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752657637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65301f9d734542f448eb558b715e1549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneBGMName: Stage01
+--- !u!4 &1752657639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752657637}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1796554411
 GameObject:
   m_ObjectHideFlags: 0
@@ -2462,11 +2364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< Updated upstream
-  m_IsActive: 1
-=======
   m_IsActive: 0
->>>>>>> Stashed changes
 --- !u!114 &1818384066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2524,93 +2422,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 307, y: 314}
   m_Pivot: {x: 0.5, y: 0.5}
-<<<<<<< Updated upstream
-=======
---- !u!1 &1831953093
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1831953095}
-  - component: {fileID: 1831953094}
-  m_Layer: 0
-  m_Name: "\uAD8C\uBBFC\uD601 test"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!212 &1831953094
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831953093}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 723259137
-  m_SortingLayer: 3
-  m_SortingOrder: 1
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1831953095
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831953093}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.66331464, y: -0.3489843, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!1001 &1917852123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3182,24 +2993,13 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 589092797}
-<<<<<<< Updated upstream
-  - {fileID: 1212804494}
-  - {fileID: 817330638}
-  - {fileID: 519420032}
-=======
   - {fileID: 519420032}
   - {fileID: 817330638}
-  - {fileID: 1831953095}
->>>>>>> Stashed changes
   - {fileID: 1605678641}
   - {fileID: 509957375}
   - {fileID: 304196734}
   - {fileID: 1531018229}
   - {fileID: 152940451}
-  - {fileID: 2121583832}
-<<<<<<< Updated upstream
-  - {fileID: 1399245448}
-=======
   - {fileID: 1212804494}
-  - {fileID: 513644674}
->>>>>>> Stashed changes
+  - {fileID: 2121583832}
+  - {fileID: 1752657639}

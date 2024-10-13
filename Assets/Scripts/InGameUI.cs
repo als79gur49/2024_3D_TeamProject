@@ -66,15 +66,17 @@ public class InGameUI : MonoBehaviour
        
     }
 
+
     void Update()
     {
             //Debug.Log("Update is called");
 
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
-            {
+             {
                    Invoke("InactiveImage", 0.25f);
-            }
+             }
     
+
         if (Texttime == null)
         {
             Debug.Log("timeText is null");
@@ -85,6 +87,7 @@ public class InGameUI : MonoBehaviour
    
             if (timer != null && timer.gameTime >= 0.0f)
             {
+
                 int hours = (int)timer.displayTime / 3600;
                 int minutes = ((int)timer.displayTime % 3600) / 60;
                 int seconds = (int)timer.displayTime % 60;
@@ -96,6 +99,10 @@ public class InGameUI : MonoBehaviour
                 }
             }
         }
+
+
+      
+
 
     }
 
@@ -166,6 +173,10 @@ public class InGameUI : MonoBehaviour
             Debug.Log($"No new best time set for stage {stageIndex}");
         }
     }
+
+
+    
+
 
     public void gameOver()
     {

@@ -29,37 +29,21 @@ public class BuildingSpawner : MonoBehaviour
     private int currentSpawnCount;
     public int MaxSpawnCount { get => maxSpawnCount; }
 
-    [SerializeField][Range(0, 1)]
-    private float spawnDelay;
     private float totalChance; //chanceÀÇ ÃÑÇÕ
     private GameObject lastBlock; //°¡Àå ÃÖ±Ù ºí·°ÀÇ Á¤º¸¸¦ ÅëÇØ »õ·Î¿î ºí·° »ı¼º °¡´É¼º È®ÀÎ
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 039c47f (ë¬¸ì œ ìˆ˜ì •ì¤‘)
+    #region »ı¼ºµÇ´Â ºí·° °ü·Ã ÄÚµå
+    [SerializeField][Range(0, 1)]
+    private float spawnDelay;
     [SerializeField][Range(0, 10)]
     private float horizontalSpeeds;
-<<<<<<< Updated upstream
-    [SerializeField][Range(0, 10)] // 0 ~ range
-    private int addedRandomhorizontalSpeeds;
-=======
     [SerializeField][Range(0, 5)]
     private int addedHorRandomRange;
->>>>>>> Stashed changes
     [SerializeField][Range(0, 10)]
     private float verticalSpeeds;
-<<<<<<< HEAD
->>>>>>> parent of 8830eeb (ë‚´ìš© ë³‘í•© ë° ì”¬ ì´ë™ ê°„ BGMì•Œì•„ì„œ í”Œë ˆì´, ë²„ê·¸ ìˆ˜ì •)
-=======
->>>>>>> parent of ed3a944 (testê¹ƒí—ˆë²„)
-=======
->>>>>>> parent of ed3a944 (testê¹ƒí—ˆë²„)
-=======
->>>>>>> parent of 039c47f (ë¬¸ì œ ìˆ˜ì •ì¤‘)
+    #endregion
+
+    [SerializeField]
+    private GameObject tutorialObject; //Æ©Åä¸®¾ó ±×¸² »ç¶óÁö±â Àü±îÁö ºí·° ½ºÆù ±İÁö
 
     private void Awake()
     {
@@ -68,9 +52,13 @@ public class BuildingSpawner : MonoBehaviour
         lastBlock = null;
         currentSpawnCount = 0;
     }
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return new WaitUntil(()=>!tutorialObject.activeSelf);
+
         StartCoroutine(nameof(SpawnCoroutine));
+
+        yield return null;
     }
     private IEnumerator SpawnCoroutine()
     {
@@ -86,6 +74,24 @@ public class BuildingSpawner : MonoBehaviour
         }
 
         //ÃÖ´ë ½ºÆù ¼ö µµ´Ş ½Ã Ã³¸®
+    }
+
+
+
+    public void DelaySpawn(float delay)
+    {
+        //¿ÜºÎ¿¡¼­ È£Ãâ
+        StartCoroutine(nameof(DelayCoroutine), delay);
+
+    }
+
+    private IEnumerator DelayCoroutine(float delay)
+    {
+        StopCoroutine(nameof(SpawnCoroutine));
+
+        yield return new WaitForSeconds(delay);
+
+        StartCoroutine(nameof(SpawnCoroutine));
     }
 
     private void CalculateChance()
@@ -105,45 +111,11 @@ public class BuildingSpawner : MonoBehaviour
     {
         Building building = buildings[GetRandomIndex()];
         GameObject block = Instantiate(building.Prefab, GetRandomSpawnPoint(), Quaternion.identity);
-        int randomSpeed = Random.Range(0, addedHorRandomRange + 1);
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 8830eeb (ë‚´ìš© ë³‘í•© ë° ì”¬ ì´ë™ ê°„ BGMì•Œì•„ì„œ í”Œë ˆì´, ë²„ê·¸ ìˆ˜ì •)
-=======
->>>>>>> parent of 8830eeb (ë‚´ìš© ë³‘í•© ë° ì”¬ ì´ë™ ê°„ BGMì•Œì•„ì„œ í”Œë ˆì´, ë²„ê·¸ ìˆ˜ì •)
->>>>>>> Stashed changes
-=======
->>>>>>> parent of 8830eeb (ë‚´ìš© ë³‘í•© ë° ì”¬ ì´ë™ ê°„ BGMì•Œì•„ì„œ í”Œë ˆì´, ë²„ê·¸ ìˆ˜ì •)
-=======
->>>>>>> parent of 8830eeb (ë‚´ìš© ë³‘í•© ë° ì”¬ ì´ë™ ê°„ BGMì•Œì•„ì„œ í”Œë ˆì´, ë²„ê·¸ ìˆ˜ì •)
-        block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds;
-        block.GetComponent<PlayableMove>().VerticalSpeed = verticalSpeeds;
->>>>>>> parent of 8830eeb (ë‚´ìš© ë³‘í•© ë° ì”¬ ì´ë™ ê°„ BGMì•Œì•„ì„œ í”Œë ˆì´, ë²„ê·¸ ìˆ˜ì •)
-=======
->>>>>>> parent of ed3a944 (testê¹ƒí—ˆë²„)
-=======
->>>>>>> parent of ed3a944 (testê¹ƒí—ˆë²„)
-=======
-        block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds + Random.Range(0, addedRandomhorizontalSpeeds + 1);
-        block.GetComponent<PlayableMove>().VerticalSpeed = verticalSpeeds;
->>>>>>> parent of 039c47f (ë¬¸ì œ ìˆ˜ì •ì¤‘)
-=======
-        block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds + randomSpeed;
-        block.GetComponent<PlayableMove>().VerticalSpeed = verticalSpeeds;
+        int addedHorSpeed = Random.Range(0, addedHorRandomRange + 1);
 
->>>>>>> Stashed changes
+        block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds + addedHorSpeed;
+        block.GetComponent<PlayableMove>().VerticalSpeed = verticalSpeeds;
         //Debug.Log(block.name + " »ı¼º");
 
         return block;

@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class StageManager : MonoBehaviour
 {
     //각 스테이지별로 배치, 클리어 조건 설정, 게임 성공 및 실패 호출 하는 곳
     //CurrentHeight프로퍼티는 GameClear, CurrentHealth프로퍼티는 GameFail
-
-    //[SerializeField]
-    //private int currentStageLevel;
-
     [Header("일정 높이 이상")]
     [SerializeField]
     private bool targetOnOffSwitch;
@@ -22,18 +19,12 @@ public class StageManager : MonoBehaviour
     [SerializeField]
     private int currentHealth;
 
-
     public delegate void ChangedHealth(int currenthealth);
     public static event ChangedHealth OnHealthChanged;
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
     public int CurrentHeight
     {
         get => currentHeight;
-
         set
         {
             currentHeight = value;
@@ -51,7 +42,6 @@ public class StageManager : MonoBehaviour
     public int CurrentHealth
     {
         get => currentHealth;
-
         set
         {
             currentHealth = value;
@@ -91,7 +81,6 @@ public class StageManager : MonoBehaviour
                 {
                     GameObject obj = new GameObject("StageManager");
                     instance = obj.AddComponent<StageManager>();
-
                     //DontDestroyOnLoad(obj);
                 }
             }
@@ -100,14 +89,8 @@ public class StageManager : MonoBehaviour
         }
     }
 
-    
-
-   
-
     private void Awake() //싱글톤 패턴
     {
-        BlockManager.ResetBlocks();
-
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -117,13 +100,7 @@ public class StageManager : MonoBehaviour
 
         instance = this;
 
+        BlockManager.InitializeBlocks();
         //DontDestroyOnLoad(this.gameObject);
     }
-
-    private void Start()
-    {
-        BlockManager.Initialize();
-    }
-
-
 }
