@@ -19,7 +19,13 @@ public class LevelLock : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+            if (stageNumObject != null)
+            {
+                DontDestroyOnLoad(stageNumObject);
+            }
         }
+
         else
         {
             Destroy(gameObject);
@@ -40,7 +46,13 @@ public class LevelLock : MonoBehaviour
     }
     void InitializeStages()
     {
-        Button[] stages = stageNumObject?.GetComponentsInChildren<Button>();
+        if (stageNumObject == null)
+        {
+            Debug.LogError("stageNumObject is missing or has been destroyed");
+            return;
+        }
+
+        Button[] stages = stageNumObject.GetComponentsInChildren<Button>();
 
         // 저장된 스테이지 번호 불러오기
         levelReached = PlayerPrefs.GetInt("levelReached", 0); // 기본값 0 (첫 스테이지)
@@ -80,20 +92,28 @@ public class LevelLock : MonoBehaviour
     }
 
 
-        public void UnlockNextStage()
+        public void UnlockNextStage(int currentStageIndex)
         {
+
         int levelReached = PlayerPrefs.GetInt("levelReached", 0); // 기본값 0
-        int nextStage = levelReached + 1;
+        int nextStage = currentStageIndex + 1;
 
-        PlayerPrefs.SetInt("levelReached", nextStage);
-        PlayerPrefs.Save();
-
-        Debug.Log($"Stage {nextStage} unlocked.");
-
-        if (nextStage - 1 < lockObjects.Length && lockObjects[nextStage - 1] != null)
+        if (currentStageIndex >= levelReached)
         {
-            lockObjects[nextStage - 1].SetActive(false);
-            Debug.Log($"Lock object for stage {nextStage} disabled.");
+            PlayerPrefs.SetInt("levelReached", nextStage);
+            PlayerPrefs.Save();
+
+            Debug.Log($"Stage {nextStage} unlocked.");
+
+            if (nextStage - 1 < lockObjects.Length && lockObjects[nextStage - 1] != null)
+            {
+                lockObjects[nextStage - 1].SetActive(false);
+                Debug.Log($"Lock object for stage {nextStage} disabled.");
+            }
+        }
+        else
+        {
+            Debug.Log("Stage already cleared. No new stage unlocked.");
         }
     }
 

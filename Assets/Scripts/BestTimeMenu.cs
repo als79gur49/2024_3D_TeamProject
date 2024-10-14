@@ -15,7 +15,7 @@ public class BestTimeDisplay : MonoBehaviour
 
             if (bestTime == float.MaxValue)
             {
-                bestTimeTexts[i].text = $"Stage {i + 1}: No record yet";
+                bestTimeTexts[i].text = $"최고 기록: 00:00:00.000";
             }
             else
             {
@@ -26,7 +26,7 @@ public class BestTimeDisplay : MonoBehaviour
 
                 Debug.Log($"Formatted best time for stage {i}: {string.Format("{0:00}:{1:00}:{2:00}.{3:000}", hours, minutes, seconds, milliseconds)}");
 
-                bestTimeTexts[i].text = string.Format("Stage {0}: {1:00}:{2:00}:{3:00}.{4:000}", i + 1, hours, minutes, seconds, milliseconds);
+                bestTimeTexts[i].text = string.Format("최고 기록: {1:00}:{2:00}:{3:00}.{4:000}", i + 1, hours, minutes, seconds, milliseconds);
              
             }
         }

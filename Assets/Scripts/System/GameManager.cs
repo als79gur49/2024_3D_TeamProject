@@ -42,23 +42,27 @@ public class GameManager : MonoBehaviour
 
 
         int levelReached = PlayerPrefs.GetInt("levelReached", 0); // 현재 레벨 불러오기
-        int nextStage = levelReached + 1;
-
-        Debug.Log($"Current levelReached: {levelReached}, NextStage: {nextStage}");
-
-        // 다음 스테이지 락 해제
-        if (levelLock != null)
+        if (stageIndex >= levelReached)
         {
-            levelLock.UnlockNextStage();
-            Debug.Log("UnlockNextStage called.");
+
+
+            int nextStage = levelReached + 1;
+
+            Debug.Log($"Current levelReached: {levelReached}, NextStage: {nextStage}");
+
+            // 다음 스테이지 락 해제
+            if (levelLock != null)
+            {
+                levelLock.UnlockNextStage(stageIndex);
+                Debug.Log("UnlockNextStage called.");
+            }
+        }
+        else
+        {
+            Debug.Log("Stage already cleared. No new stage unlocked.");
         }
 
-        // 다음 스테이지 번호 저장
-        PlayerPrefs.SetInt("levelReached", nextStage);
-        PlayerPrefs.Save();
 
-        Debug.Log($"Stage {nextStage} unlocked and saved.");
-       
     }
         
     public void StageFail(int stageIndex)

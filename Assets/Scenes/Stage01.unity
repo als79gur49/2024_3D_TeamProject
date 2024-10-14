@@ -1942,6 +1942,14 @@ PrefabInstance:
       propertyPath: sceneName
       value: Stage01
       objectReference: {fileID: 0}
+    - target: {fileID: 5345819131599311268, guid: 4fed06b78bacc0b47bde90acaddeea9b, type: 3}
+      propertyPath: buttonClipName
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 5345819131599311268, guid: 4fed06b78bacc0b47bde90acaddeea9b, type: 3}
+      propertyPath: waitTimeMultiplier
+      value: 0.17
+      objectReference: {fileID: 0}
     - target: {fileID: 6161953622069797837, guid: 4fed06b78bacc0b47bde90acaddeea9b, type: 3}
       propertyPath: m_Name
       value: ButtonRegame
