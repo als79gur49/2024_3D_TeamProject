@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 150159747}
   - component: {fileID: 150159749}
   - component: {fileID: 150159748}
+  - component: {fileID: 150159750}
   m_Layer: 5
   m_Name: GameClear
   m_TagString: Untagged
@@ -232,6 +233,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150159746}
   m_CullTransparentMesh: 1
+--- !u!114 &150159750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150159746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafa7d914d2ded647866087f6dc7c503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnableClipName: GameClear
 --- !u!1 &152940445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,6 +1784,7 @@ GameObject:
   - component: {fileID: 1004211167}
   - component: {fileID: 1004211166}
   - component: {fileID: 1004211165}
+  - component: {fileID: 1004211168}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -1836,6 +1851,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 456, y: 456}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1004211168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004211164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafa7d914d2ded647866087f6dc7c503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnableClipName: GameOver
 --- !u!1001 &1063583672
 PrefabInstance:
   m_ObjectHideFlags: 0
