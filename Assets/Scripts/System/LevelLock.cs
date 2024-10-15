@@ -48,7 +48,7 @@ public class LevelLock : MonoBehaviour
     {
         if (stageNumObject == null)
         {
-            Debug.LogError("stageNumObject is missing or has been destroyed");
+            //Debug.LogError("stageNumObject is missing or has been destroyed");
             return;
         }
 
@@ -87,7 +87,7 @@ public class LevelLock : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("StageNumObject is not properly assigned or has no children.");
+            //Debug.LogWarning("StageNumObject is not properly assigned or has no children.");
         }
     }
 
@@ -103,17 +103,17 @@ public class LevelLock : MonoBehaviour
             PlayerPrefs.SetInt("levelReached", nextStage);
             PlayerPrefs.Save();
 
-            Debug.Log($"Stage {nextStage} unlocked.");
+            //Debug.Log($"Stage {nextStage} unlocked.");
 
             if (nextStage - 1 < lockObjects.Length && lockObjects[nextStage - 1] != null)
             {
                 lockObjects[nextStage - 1].SetActive(false);
-                Debug.Log($"Lock object for stage {nextStage} disabled.");
+                //Debug.Log($"Lock object for stage {nextStage} disabled.");
             }
         }
         else
         {
-            Debug.Log("Stage already cleared. No new stage unlocked.");
+            //Debug.Log("Stage already cleared. No new stage unlocked.");
         }
     }
 
@@ -128,7 +128,7 @@ public class LevelLock : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"Checkmark for stage {stageIndex} is null or out of bounds.");
+            //Debug.LogWarning($"Checkmark for stage {stageIndex} is null or out of bounds.");
         }
     }
 

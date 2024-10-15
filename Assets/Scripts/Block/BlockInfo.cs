@@ -3,35 +3,30 @@ using UnityEngine;
 
 public class BlockInfo : MonoBehaviour
 {
+    //자신의 위에 붙을 수 있는 최대 블럭 수
     [SerializeField]
     private int maxInteractableBlock = 1;
-    //자신의 위에 최대 붙을 수 있는 블럭의 개수;
+    
+    public int MaxInteractableBlock { get => maxInteractableBlock;}
+    private int interactableBlock = 0;
+    public int InteractableBlock { get => interactableBlock; set => interactableBlock = value; }
+    public GameObject PrevGameObject { get; set; }
 
     [SerializeField][Range(0, 20)]
     private int height;
-
     public int Height { get => height; }
-
-    private int interactableBlock = 0;
-    public int MaxInteractableBlock { get => maxInteractableBlock;}
-    public int InteractableBlock { get => interactableBlock; set => interactableBlock = value; }
-
-    public GameObject PrevGameObject { get; set; }
-    //블럭이 움직이는 방법
-    //좌우 이동 -> Input -> 상하 이동 -> 다른 블럭과 접촉 시 조건에 따라 삭제 or 설치
-    //설치 시 고정 -> 오차 수정위해 설정된 위치로 조정
 
     public void DestroyBlock()
     {
         if(SoundManager.Instance.EffectPlayer.GetComponent<AudioSource>().isPlaying)
-        {
+        {   //소리 중첩 방지
             SoundManager.Instance.PlayEffectAudio("Fail", 0.4f);
         }
         else
         {
             SoundManager.Instance.PlayEffectAudio("Fail");
         }
-
+        //파괴 시 추가 기능
         AdditionalCondition();
 
         Destroy(gameObject);
@@ -46,6 +41,7 @@ public class BlockInfo : MonoBehaviour
         }
     }
 
+    //한 번에 파괴될 경우 지연삭제
     public void DelayDestroyBlock(float delayTime)
     {
         StartCoroutine(ChangeColor(delayTime));
@@ -64,6 +60,4 @@ public class BlockInfo : MonoBehaviour
 
         DestroyBlock();
     }    
-
-
 }

@@ -148,7 +148,7 @@ public class InGameUI : MonoBehaviour
 
         if (gameManager != null)
         {
-            Debug.Log($"Calling StageClear with stageIndex: {stageIndex}");
+            //Debug.Log($"Calling StageClear with stageIndex: {stageIndex}");
 
             // GameManager의 StageClear 메서드 호출
             gameManager.StageClear(stageIndex);
@@ -158,19 +158,19 @@ public class InGameUI : MonoBehaviour
 
     void SaveBestTime(float time, int stageIndex)
     {
-        Debug.Log($"SaveBestTime called for stage {stageIndex} with time: {time}");
+        //Debug.Log($"SaveBestTime called for stage {stageIndex} with time: {time}");
         float bestTime = PlayerPrefs.GetFloat($"BestTime_{stageIndex}", float.MaxValue);
-        Debug.Log($"Current best time for stage {stageIndex}: {bestTime}");
+        //Debug.Log($"Current best time for stage {stageIndex}: {bestTime}");
 
         if (time < bestTime)
         {
             PlayerPrefs.SetFloat($"BestTime_{stageIndex}", time);
             PlayerPrefs.Save();
-            Debug.Log($"New best Time for stage {stageIndex}: {time} saved in PlayerPrefs");
+            //Debug.Log($"New best Time for stage {stageIndex}: {time} saved in PlayerPrefs");
         }
         else
         {
-            Debug.Log($"No new best time set for stage {stageIndex}");
+            //Debug.Log($"No new best time set for stage {stageIndex}");
         }
     }
 

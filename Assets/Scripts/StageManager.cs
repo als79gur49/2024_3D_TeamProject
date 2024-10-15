@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
-    //각 스테이지별로 배치, 클리어 조건 설정, 게임 성공 및 실패 호출 하는 곳
-    //CurrentHeight프로퍼티는 GameClear, CurrentHealth프로퍼티는 GameFail
+    //스테이지별 클리어 조건 설정, 게임 성공, 실패 판정
+    //CurrentHeight => GameClear, CurrentHealth => GameFail
     [Header("일정 높이 이상")]
     [SerializeField]
     private bool targetOnOffSwitch;
@@ -14,10 +14,8 @@ public class StageManager : MonoBehaviour
     [Range(0, 500)]
     private int targetHeight;
 
-    [SerializeField]
-    private int currentHeight;
-    [SerializeField]
-    private int currentHealth;
+    private int currentHeight = 10;
+    private int currentHealth = 3;
 
     public delegate void ChangedHealth(int currenthealth);
     public static event ChangedHealth OnHealthChanged;
@@ -47,6 +45,7 @@ public class StageManager : MonoBehaviour
             currentHealth = value;
 
             OnHealthChanged?.Invoke(currentHealth);
+
             if (currentHealth <= 0)
             {
                 InGameUI inGameUI = FindAnyObjectByType<InGameUI>();
@@ -101,6 +100,5 @@ public class StageManager : MonoBehaviour
         instance = this;
 
         BlockManager.InitializeBlocks();
-        //DontDestroyOnLoad(this.gameObject);
     }
 }

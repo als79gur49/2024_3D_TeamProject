@@ -3,21 +3,18 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
-
 [System.Serializable]
 public class KeyValuePair
-{
+{   //딕셔너리는 직렬화가 되지 않아서 따로 key, value 비슷하게 제작
     public string name;
     public AudioClip clip;
-
-    public static implicit operator AudioClip(KeyValuePair pair)
-    {
-        return pair.clip;
-    }
 }
 
 public class SoundManager : MonoBehaviour
 {
+    //모든 소리를 반드시 bgm, effect 중 하나를 선택해서 출력하기
+
+    //오디오 설정창 x, 인스펙터 창에서 수정 시 적용
     [SerializeField]
     private AudioMixer mAudioMixer;
     [SerializeField]
@@ -27,8 +24,8 @@ public class SoundManager : MonoBehaviour
 
     public GameObject EffectPlayer => effectPlayer;
 
-    #region 볼륨 수정하는 변수들
-    [SerializeField][Range(-80, 20)]
+    #region 볼륨 수정하는 변수들 
+    [SerializeField][Range(-80, 20)] //오디오 믹서의 Volume의 경우 선형이 아닌 로그 스케일인 것 같음.
     private float currentMasterVolume;
     [SerializeField][Range(-80, 20)]
     private float currentBGMVolume;
@@ -115,8 +112,6 @@ public class SoundManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-
-
     public void PlayBGMAudio(AudioClip clip, float rate = 0.0f)
     {
         bgmPlayer.GetComponent<AudioSource>().clip = clip;
@@ -125,6 +120,7 @@ public class SoundManager : MonoBehaviour
 
         bgmPlayer.GetComponent<AudioSource>().Play();
     }
+
     public bool PlayBGMAudio(string clipName, float rate = 0.0f)
     {
         AudioClip resultClip = GetClip(clipName, bgmClips);
@@ -147,7 +143,8 @@ public class SoundManager : MonoBehaviour
 
         return true;
     }
-    public bool PlayBGMAudio(string clipName, out AudioClip audioClip, float rate)
+
+    public bool PlayBGMAudio(string clipName, out AudioClip audioClip, float rate = 0.0f)
     {
         audioClip = GetClip(clipName, effectClips);
 
@@ -171,9 +168,9 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    public void PlayEffectAudio(AudioClip clip)
+    public void PlayEffectAudio(AudioClip clip, float volume = 1f)
     {
-        effectPlayer.GetComponent<AudioSource>().PlayOneShot(clip);
+        effectPlayer.GetComponent<AudioSource>().PlayOneShot(clip, volume);
     }
     public bool PlayEffectAudio(string clipName, float volume = 1f)
     {
@@ -186,11 +183,11 @@ public class SoundManager : MonoBehaviour
             return false;
         }
 
-        effectPlayer.GetComponent<AudioSource>().PlayOneShot(resultClip, volume);
+        PlayEffectAudio(resultClip, volume);
 
         return true;
     }
-    public bool PlayEffectAudio(string clipName, out AudioClip audioClip)
+    public bool PlayEffectAudio(string clipName, out AudioClip audioClip, float volume = 1f)
     {
         audioClip = GetClip(clipName, effectClips);
 
@@ -201,7 +198,7 @@ public class SoundManager : MonoBehaviour
             return false;
         }
 
-        effectPlayer.GetComponent<AudioSource>().PlayOneShot(audioClip);
+        PlayEffectAudio(audioClip, volume);
 
         return true;
     }

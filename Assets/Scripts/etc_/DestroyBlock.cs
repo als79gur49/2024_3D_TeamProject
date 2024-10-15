@@ -11,7 +11,6 @@ public class DestroyBlock : MonoBehaviour
             if(movement.IsMoving)
             {
                 StageManager.Instance.CurrentHealth--;
-
                 block.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
             }
         }

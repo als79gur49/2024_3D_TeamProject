@@ -6,10 +6,10 @@ using static Unity.Collections.AllocatorManager;
 
 public class BlockCollider : MonoBehaviour
 {
-    //Top -> Bottom 2개 이상 쌓이면 모두 삭제 0
-    // Top->Side side오브젝트만 삭제
-    //Side->Bottom 상대 오브젝트 삭제
-    //Side->Side 상대 오브젝트 삭제
+    //Top -> Bottom BlockInfo의 maxInteractableBlock 초과 시 BlockManager의 Blocks List 초기화, hp--
+    //Top -> Side side블럭 삭제, hp--
+    //Side -> Bottom Bottom블럭 삭제, hp--
+    //Side -> Side Side블럭 삭제, hp--
 
     [SerializeField]
     protected GameObject mainBlock;
@@ -25,22 +25,22 @@ public class BlockCollider : MonoBehaviour
     }
 
     protected void OnTriggerEnter2D(Collider2D other)
-    {
+    {   //충돌 가능 블럭, 고정된 상태에서 떨어지는 블럭에 대해서만, 다중충돌 방지
         if (IsPlayableBlock(other.gameObject, out BlockCollider otherBlock, out PlayableMove otherMovement) &&
            !IsFalling(movement) && IsFalling(otherMovement) && 
            MainBlock != otherBlock.MainBlock)
         {
             if (other.GetComponent<BottomBlockCollider>())
-            {
+            {   //해당 부분 override 통해서 수정
                 BottomCollidedLogic(otherBlock, otherMovement);
             }
             else if (other.GetComponent<SideBlockCollider>())
-            {
+            {   //해당 부분 override 통해서 수정
                 SideCollidedLogic(otherBlock, otherMovement);
             }
             else if (other.GetComponent<TopBlockCollider>())
             {
-
+                // x
             }
         }
     }

@@ -848,7 +848,11 @@ PrefabInstance:
       objectReference: {fileID: 2093422978}
     - target: {fileID: 4193196168630272391, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
       propertyPath: currentBGMVolume
-      value: 0
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193196168630272391, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+      propertyPath: currentEffectVolume
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4193196168630272391, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
       propertyPath: currentMasterVolume

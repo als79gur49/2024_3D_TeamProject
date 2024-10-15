@@ -1156,6 +1156,18 @@ PrefabInstance:
       propertyPath: effectPlayer
       value: 
       objectReference: {fileID: 2032641797}
+    - target: {fileID: 4193196168630272391, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+      propertyPath: currentBGMVolume
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193196168630272391, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+      propertyPath: currentEffectVolume
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193196168630272391, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
+      propertyPath: currentMasterVolume
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7903866349052517207, guid: 35f80013a7946414c93e8c8b42a3268e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.16672574
@@ -1995,9 +2007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetOnOffSwitch: 1
-  targetHeight: 40
-  currentHeight: 0
-  currentHealth: 3
+  targetHeight: 400
 --- !u!4 &1212804494
 Transform:
   m_ObjectHideFlags: 0

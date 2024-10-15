@@ -11,10 +11,10 @@ public class TopBlockCollider : BlockCollider
     }
 
     protected override void BottomCollidedLogic(BlockCollider otherBlock, PlayableMove otherMovement)
-    {
+    {   //접촉된 블럭 수 체크
         if (collidedBlocks.Count < info.MaxInteractableBlock)
-        {
-            if (AddList(otherBlock, otherMovement) && info.PrevGameObject != otherBlock.MainBlock.gameObject)
+        {   //다중충돌 체크, 충돌된 블럭 collidedBlocks에서 관리
+            if (info.PrevGameObject != otherBlock.MainBlock.gameObject && AddList(otherBlock, otherMovement))
             {
                 otherMovement.StopBlock();
                 BlockManager.PushBlock(otherBlock.MainBlock);
@@ -29,7 +29,7 @@ public class TopBlockCollider : BlockCollider
             if(info.PrevGameObject != otherBlock.MainBlock.gameObject)
             {
                 BlockManager.DestroyAllBlocks();
-                Debug.Log("T->B");
+
                 otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
                 StageManager.Instance.CurrentHealth--;
             }
@@ -40,7 +40,6 @@ public class TopBlockCollider : BlockCollider
     {
         if (info.PrevGameObject != otherBlock.MainBlock.gameObject)
         {
-            Debug.Log("T->S");
             otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
             StageManager.Instance.CurrentHealth--;
         }
@@ -63,7 +62,6 @@ public class TopBlockCollider : BlockCollider
     }
     protected void OnTriggerExit2D(Collider2D other)
     {
-
         if (other.gameObject.TryGetComponent<BlockCollider>(out BlockCollider block))
         {
             if (collidedBlocks.Contains(block.MainBlock))
@@ -75,14 +73,3 @@ public class TopBlockCollider : BlockCollider
         }
     }
 }
-
-/* //소리 출력 원형
-if(info.PrevGameObject != otherBlock.MainBlock.gameObject)
-            {
-                //SoundManager.Instance.PlayEffectAudio("Fail");
-            }
-            info.PrevGameObject = otherBlock.MainBlock.gameObject;
-
-            otherBlock.MainBlock.GetComponent<BlockInfo>().DestroyBlock();
-            BlockManager.DestroyAllBlocks();
-*/

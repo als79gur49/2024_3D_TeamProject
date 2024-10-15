@@ -31,6 +31,7 @@ public class BuildingSpawner : MonoBehaviour
 
     private float totalChance; //chance의 총합
     private GameObject lastBlock; //가장 최근 블럭의 정보를 통해 새로운 블럭 생성 가능성 확인
+
     #region 생성되는 블럭 관련 코드
     [SerializeField][Range(0, 1)]
     private float spawnDelay;
@@ -53,7 +54,7 @@ public class BuildingSpawner : MonoBehaviour
         currentSpawnCount = 0;
     }
     private IEnumerator Start()
-    {
+    {   //튜토리얼 이미지 사라지기 전까지 스폰x
         yield return new WaitUntil(()=>!tutorialObject.activeSelf);
 
         StartCoroutine(nameof(SpawnCoroutine));
@@ -76,13 +77,10 @@ public class BuildingSpawner : MonoBehaviour
         //최대 스폰 수 도달 시 처리
     }
 
-
-
     public void DelaySpawn(float delay)
     {
         //외부에서 호출
         StartCoroutine(nameof(DelayCoroutine), delay);
-
     }
 
     private IEnumerator DelayCoroutine(float delay)
@@ -104,19 +102,17 @@ public class BuildingSpawner : MonoBehaviour
             
             b.Rate = totalChance;
         }
-
     }
 
     private GameObject SpawnBuilding()
     {
         Building building = buildings[GetRandomIndex()];
         GameObject block = Instantiate(building.Prefab, GetRandomSpawnPoint(), Quaternion.identity);
-
+        
         int addedHorSpeed = Random.Range(0, addedHorRandomRange + 1);
 
         block.GetComponent<PlayableMove>().HorizontalSpeed = horizontalSpeeds + addedHorSpeed;
         block.GetComponent<PlayableMove>().VerticalSpeed = verticalSpeeds;
-        //Debug.Log(block.name + " 생성");
 
         return block;
     }

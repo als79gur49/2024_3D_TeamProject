@@ -6,21 +6,20 @@ using UnityEngine.EventSystems;
 
 public class PlayableMove : MonoBehaviour
 {
-    //블럭의 이동을 담당
+    #region 블럭 이동 담당 변수, 프로퍼티
     [SerializeField][Range(0, 20)]
     private float horizontalSpeed;
     [SerializeField][Range(0, 10)]
     private float verticalSpeed;
     [SerializeField]
-    private bool isAccelerating; //필요 여부에 따라 차후 제작 가능.
+    private bool isAccelerating; //기능 구현X.
+    public float HorizontalSpeed { get => horizontalSpeed; set { horizontalSpeed = value; } }
+    public float VerticalSpeed { get => verticalSpeed; set {  verticalSpeed = value; } }
+    #endregion
 
     private InGameUI inGameUI;
 
-    public float HorizontalSpeed { get => horizontalSpeed; set { horizontalSpeed = value; } }
-    public float VerticalSpeed { get => verticalSpeed; set {  verticalSpeed = value; } }
-
     private Rigidbody2D rigid;
-    private Vector3 nextSpeed;
     public bool IsFalling { get; private set; } = false;
     [SerializeField]
     private bool isMoving;
@@ -29,7 +28,6 @@ public class PlayableMove : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-        nextSpeed = Vector3.zero;
 
         inGameUI = FindObjectOfType<InGameUI>();
         if (inGameUI == null)

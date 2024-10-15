@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private int blockLimit;
     private int blockCount;
-
+    //기본 위치 0m 카메라 위치
     [SerializeField]
     private Transform originPosition;
 
